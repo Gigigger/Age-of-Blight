@@ -232,6 +232,8 @@
 	switch(passed_layer)
 		if(BODY_FRONT_LAYER)
 			return "FRONT"
+		if(BODY_ADJ_LOWEST_LAYER)
+			return "ADJ"
 		if(BODY_ADJ_LOW_LAYER)
 			return "ADJ"
 		if(BODY_ADJ_LAYER)
@@ -241,6 +243,8 @@
 		if(BODY_ADJ_UPPER_LAYER)
 			return "ADJ"
 		if(BODY_ADJ_TOP_LAYER)
+			return "ADJ"
+		if(BODY_ADJ_TOP_TOP_LAYER)
 			return "ADJ"
 		if(BODY_BEHIND_LAYER)
 			return "BEHIND"
