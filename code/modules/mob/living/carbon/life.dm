@@ -211,7 +211,10 @@
 		emote("drown")
 		react_volume = 5
 		react_type = INGEST
-	var/datum/reagents/reagents = new()
+	if(!temp_water_reagents)
+		temp_water_reagents = new /datum/reagents(10)
+	var/datum/reagents/reagents = temp_water_reagents
+	reagents.clear_reagents()
 	reagents.add_reagent(W.water_reagent, react_volume)
 	reagents.reaction(src, react_type, W.level / 2)
 
@@ -929,6 +932,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		var/sleepy_mod = buckled?.sleepy || 0.5
 		var/bleed_rate = get_bleed_rate()
 		var/yess = HAS_TRAIT(src, TRAIT_NOHUNGER)
+		var/needs_damage_overlay_update = FALSE
 		if(nutrition > 0 || yess)
 			adjust_energy(sleepy_mod * (max_energy * 0.02))
 		if(HAS_TRAIT(src, TRAIT_BETTER_SLEEP))
@@ -943,13 +947,15 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				if(affecting.get_bleed_rate() >= 2)
 					continue
 				if(affecting.heal_damage(sleepy_mod * 1.5, sleepy_mod * 1.5, required_status = BODYPART_ORGANIC, updating_health = FALSE)) // multiplier due to removing healing from sleep effect
-					src.update_damage_overlays()
+					needs_damage_overlay_update = TRUE
 				for(var/datum/wound/wound as anything in affecting.wounds)
 					if(!wound.sleep_healing)
 						continue
 					wound.heal_wound(wound.sleep_healing * sleepy_mod)
 			adjustToxLoss( - ( sleepy_mod * 0.15) )
 			updatehealth()
+			if(needs_damage_overlay_update)
+				update_damage_overlays()
 			if(eyesclosed && !HAS_TRAIT(src, TRAIT_NOSLEEP))
 				Sleeping(300)
 		tiredness = 0

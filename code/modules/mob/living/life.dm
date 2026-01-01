@@ -167,17 +167,22 @@
 	location?.hotspot_expose(700, 50, 1)
 
 /mob/living/proc/handle_wounds()
+	var/list/wounds = get_wounds()
+	if(!length(wounds))
+		return
 	if(stat >= DEAD)
-		for(var/datum/wound/wound as anything in get_wounds())
+		for(var/datum/wound/wound as anything in wounds)
 			wound.on_death()
 		return
-	for(var/datum/wound/wound as anything in get_wounds())
+	for(var/datum/wound/wound as anything in wounds)
 		wound.on_life()
 
 /obj/item/proc/on_embed_life(mob/living/user, obj/item/bodypart/bodypart)
 	return
 
 /mob/living/proc/handle_embedded_objects()
+	if(!length(simple_embedded_objects))
+		return
 	for(var/obj/item/embedded in simple_embedded_objects)
 		if(embedded.on_embed_life(src))
 			continue
