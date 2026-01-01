@@ -34,7 +34,7 @@
 		return . | SPELL_CANCEL_CAST
 
 	if(!length(get_unskeletonized_bodyparts(cast_on)))
-		to_chat(cast_on, span_notice("I have completed Her Lesser Work. Only lichdom awaits me now, but just out of reach..."))
+		to_chat(cast_on, span_notice("I have completed His Lesser Work. Only lichdom awaits me now, but just out of reach..."))
 		return . | SPELL_CANCEL_CAST
 
 /datum/action/cooldown/spell/undirected/rituos/cast(mob/living/carbon/cast_on)
@@ -47,7 +47,7 @@
 
 	choices = sortList(choices)
 
-	var/choice = browser_input_list(cast_on, "Choose an arcyne expression of the Lesser Work", "HER WORKS", choices)
+	var/choice = browser_input_list(cast_on, "Choose an arcyne expression of the Lesser Work", "HIS WORKS", choices)
 	if(QDELETED(cast_on) || QDELETED(src))
 		return
 
@@ -84,7 +84,7 @@
 		cast_on.visible_message(
 			span_boldwarning("[cast_on]'s form swells with terrible power as they cast away almost all of \
 			the remnants of their mortal flesh, arcyne runes glowing upon their exposed bones..."),
-			span_notice("I HAVE DONE IT! I HAVE COMPLETED HER LESSER WORK! I stand at the cusp of unspeakable power, but something is yet missing...")
+			span_notice("I HAVE DONE IT! I HAVE COMPLETED HIS LESSER WORK! I stand at the cusp of unspeakable power, but something is yet missing...")
 		)
 		ADD_TRAIT(cast_on, TRAIT_NOHUNGER, "[type]")
 		ADD_TRAIT(cast_on, TRAIT_NOBREATH, "[type]")
@@ -124,6 +124,6 @@
 
 	user.remove_spells(source = src)
 	granted_spell = null
-	to_chat(user, span_smallnotice("The toil of invoking Her Lesser Work slips away. I may begin anew…"))
+	to_chat(user, span_smallnotice("The toil of invoking His Lesser Work slips away. I may begin anew…"))
 	reset_spell_cooldown()
 	UnregisterSignal(user, COMSIG_LIVING_DREAM_END)

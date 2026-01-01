@@ -40,8 +40,8 @@ GLOBAL_LIST_INIT(patron_sound_themes, list(
 
 /datum/patron/divine/astrata
 	name = ASTRATA
-	domain = "Goddess of Order, the Sun Queen"
-	desc = "Crafted from the head of Psydon, twin of Noc. She gifted mankind the Sun, protecting Psydonia from all forces which may seek it harm: from both outside and within."
+	domain = "God of Order, the Sun King"
+	desc = "Crafted from the head of Psydon, twin of Noc. He gifted mankind the Sun, protecting Psydonia from all forces which may seek it harm: from both outside and within."
 	flaws = "Tyrannical, Ill-Tempered, Uncompromising"
 	worshippers = "Nobles, Zealots, Commoners"
 	sins = "Betrayal, Sloth, Witchcraft"
@@ -112,8 +112,8 @@ GLOBAL_LIST_INIT(patron_sound_themes, list(
 
 /datum/patron/divine/necra
 	name = NECRA
-	domain = "Mother Goddess of Death and Time"
-	desc = "The Veiled Lady, once close partner to Psydon. She created the Nine others from his corpse, guiding them from the Underworld."
+	domain = "God of Death and Time"
+	desc = "The Veiled Lord, once close partner to Psydon. He created the Nine others from his corpse, guiding them from the Underworld."
 	flaws = "Unchanging, Apathetic, Easy to Bore"
 	worshippers = "Orderlies, Gravetenders, Mourners"
 	sins = "Heretical Magic, Untimely Death, Disturbance of Rest"
@@ -122,8 +122,8 @@ GLOBAL_LIST_INIT(patron_sound_themes, list(
 	devotion_holder = /datum/devotion/divine/necra
 	confess_lines = list(
 		"ALL SOULS FIND THEIR WAY TO NECRA!",
-		"THE UNDERMAIDEN IS OUR FINAL REPOSE!",
-		"I FEAR NOT DEATH, MY LADY AWAITS ME!",
+		"THE UNDERLORD IS OUR FINAL REPOSE!",
+		"I FEAR NOT DEATH, MY LORD AWAITS ME!",
 	)
 	storyteller = /datum/storyteller/necra
 	associated_psycross = /obj/item/clothing/neck/psycross/silver/necra
@@ -173,8 +173,8 @@ GLOBAL_LIST_INIT(patron_sound_themes, list(
 
 /datum/patron/divine/pestra
 	name = PESTRA
-	domain = "Goddess of Disease, Alchemy, and Medicine"
-	desc = "A mistake; Psydon's intestines left behind. She slithered out, bringing forth the cycle of life and decay."
+	domain = "God of Disease, Alchemy, and Medicine"
+	desc = "A mistake; Psydon's intestines left behind. He slithered out, bringing forth the cycle of life and decay."
 	flaws = "Drunkenness, Crudeness, Irresponsibility"
 	worshippers = "The Ill and Infirm, Alchemists, Physicians"
 	sins = "´Curing´ Abnormalities, Refusing to Help Unfortunates, Groveling"
@@ -210,7 +210,7 @@ GLOBAL_LIST_INIT(patron_sound_themes, list(
 /datum/patron/divine/eora
 	name = EORA
 	domain = "Goddess of Love, Family, and Art"
-	desc = "Crafted from the heart of Psydon, a spreader of love and beauty, and strengthener of bonds."
+	desc = "Crafted from the heart of Psydon, a spreader of love and beauty, and strengthener of bonds. Astrata's slave."
 	flaws= "Naivete, Impulsiveness, Bigotry"
 	worshippers = "Mothers, Artists, Married Couples"
 	sins = "Sadism, Abandonment, Ruining Beauty"

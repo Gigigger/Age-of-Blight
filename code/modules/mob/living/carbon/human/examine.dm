@@ -211,7 +211,7 @@
 				. += span_notice("My master.")
 
 			if((HAS_TRAIT(src, TRAIT_CABAL) && HAS_TRAIT(user, TRAIT_CABAL)) || (src.patron?.type == /datum/patron/inhumen/zizo && HAS_TRAIT(user, TRAIT_CABAL)))
-				. += span_purple("A fellow seeker of Her ascension.")
+				. += span_purple("A fellow seeker of His ascension.")
 
 			var/inquisition_text =get_inquisition_text(user)
 			if(inquisition_text)

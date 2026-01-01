@@ -280,7 +280,7 @@
 			spawned.change_stat(STATKEY_END, 1)
 			spawned.cmode_music = 'sound/music/cmode/adventurer/CombatMonk.ogg'
 			to_chat(spawned,span_info("\
-			I'm the lord of the harvest. I will shepherd the damned to Necra herself.")
+			I'm the lord of the harvest. I will shepherd the damned to Necra himself.")
 			)
 		if("MFlail")
 			spawned.adjust_skillrank(/datum/skill/combat/whipsflails, 3, TRUE)

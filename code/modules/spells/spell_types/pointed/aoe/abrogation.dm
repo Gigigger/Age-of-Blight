@@ -2,7 +2,7 @@
 
 /datum/action/cooldown/spell/aoe/abrogation
 	name = "Abrogation"
-	desc = "Bring forth motes of the Undermaiden to weaken the unliving."
+	desc = "Bring forth motes of the Underlord to weaken the unliving."
 	button_icon_state = "necra"
 	sound = 'sound/magic/churn.ogg'
 	charge_sound = 'sound/magic/holycharging.ogg'
@@ -12,7 +12,7 @@
 	associated_skill = /datum/skill/magic/holy
 	required_items = list(/obj/item/clothing/neck/psycross)
 
-	invocation = "The Undermaiden rejects your presence!"
+	invocation = "The Underlord rejects your presence!"
 	invocation_type = INVOCATION_SHOUT
 
 	click_to_activate = FALSE
@@ -28,7 +28,7 @@
 		return
 	owner.visible_message(
 		span_warning("A frigid blue glower suddenly erupts in [owner]'s eyes as a whispered prayer summons forth a winding veil of ghostly mists!"),
-		span_notice("I perform the sacred rite of Abrogation, bringing forth Her servants to harry and weaken the unliving!"),
+		span_notice("I perform the sacred rite of Abrogation, bringing forth His servants to harry and weaken the unliving!"),
 	)
 
 /datum/action/cooldown/spell/aoe/abrogation/is_valid_target(atom/cast_on)

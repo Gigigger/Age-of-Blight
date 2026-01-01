@@ -54,9 +54,9 @@
 				user.say("To bring Order to a world of naught!!")
 				if(do_after(user, 50))
 					user.say("Place your gaze upon me, oh Radiant one!!")
-					to_chat(user,span_danger("You feel the eye of Astrata turned upon you. Her warmth dances upon your cheek. You feel yourself warming up..."))
+					to_chat(user,span_danger("You feel the eye of Astrata turned upon you. His warmth dances upon your cheek. You feel yourself warming up..."))
 					icon_state = "astrata_active"
-					loc.visible_message(span_warning("[user] bursts to flames! Embraced by Her Warmth wholly!"))
+					loc.visible_message(span_warning("[user] bursts to flames! Embraced by His Warmth wholly!"))
 					playsound(loc, 'sound/combat/hits/burn (1).ogg', 100, FALSE, -1)
 					user.adjust_fire_stacks(10)
 					user.flash_fullscreen("redflash3")
@@ -243,7 +243,7 @@
 						if(do_after(user, 30))
 							icon_state = "pestra_active"
 							user.say("From your wounds, the fester pours!!")
-							to_chat(user,span_cultsmall("My devotion to the Plague Queen allowing, her servants crawl up from my throat. Come now, father fly..."))
+							to_chat(user,span_cultsmall("My devotion to the Plague King allowing, his servants crawl up from my throat. Come now, father fly..."))
 							loc.visible_message(span_warning("[user] opens their mouth, disgorging a great swarm of flies!"))
 							playsound(loc, 'sound/misc/fliesloop.ogg', 100, FALSE, -1)
 							flylordstriage(src)
@@ -265,7 +265,7 @@
 /obj/structure/ritualcircle/eora
 	name = "Rune of Love"
 	icon_state = "eora_chalky"
-	desc = "A Holy Rune of Eora."
+	desc = "A Holy Rune of Eora, Astrata's slave."
 
 /obj/structure/ritualcircle/ravox
 	name = "Rune of Justice"
@@ -889,7 +889,7 @@
 
 /obj/structure/ritualcircle/necra
 	desc = "A Holy Rune of Necra. Quiet acceptance stirs within you."
-	var/deathrites = list("Undermaiden's Bargain", "The Toll")
+	var/deathrites = list("Underlord's Bargain", "The Toll")
 	var/coinslot = 0
 
 /obj/structure/ritualcircle/necra/examine(mob/user)
@@ -920,7 +920,7 @@
 		return
 	var/riteselection = input(user, "Rituals of Death", src) as null|anything in deathrites
 	switch(riteselection)
-		if("Undermaiden's Bargain")
+		if("Underlord's Bargain")
 			loc.visible_message(span_warning("[user] sways before the rune, they open their mouth, though no words come out..."))
 			playsound(user, 'sound/vo/mobs/ghost/whisper (3).ogg', 100, FALSE, -1)
 			if(do_after(user, 60))
@@ -933,9 +933,9 @@
 					if(do_after(user, 20))
 						icon_state = "necra_active"
 						user.say("Forgive me, the bargain is intoned!!")
-						to_chat(user,span_cultsmall("My devotion to the Undermaiden has allowed me to strike a bargain for these souls...."))
+						to_chat(user,span_cultsmall("My devotion to the Underlord has allowed me to strike a bargain for these souls...."))
 						playsound(loc, 'sound/vo/mobs/ghost/moan (1).ogg', 100, FALSE, -1)
-						undermaidenbargain(src)
+						Underlordbargain(src)
 						user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
 						spawn(120)
 							icon_state = "necra_chalky"
@@ -1005,10 +1005,10 @@
 	src.coinslot -= 1
 	user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
 
-/obj/structure/ritualcircle/necra/proc/undermaidenbargain(src)
+/obj/structure/ritualcircle/necra/proc/Underlordbargain(src)
 	var/ritualtargets = view(7, loc)
 	for(var/mob/living/carbon/human/target in ritualtargets)
-		target.apply_status_effect(/datum/status_effect/buff/undermaidenbargain)
+		target.apply_status_effect(/datum/status_effect/buff/Underlordbargain)
 
 /obj/item/soulthread
 	name = "lux-thread"
@@ -1046,7 +1046,7 @@
 	sellprice = 30
 
 /obj/structure/ritualcircle/eora
-	desc = "A Holy Rune of Eora. A gentle warmth and joy spreads across your soul."
+	desc = "A Holy Rune of Eora, Astrata's slave. A gentle warmth and joy spreads across your soul."
 	var/peacerites = list("Rite of Pacification")
 
 /obj/structure/ritualcircle/eora/attack_hand(mob/living/user)
@@ -1153,7 +1153,7 @@
 				return
 			if(!do_after(user, 5 SECONDS))
 				return
-			user.say("ZIZO! ZIZO! DAME OF PROGRESS!!")
+			user.say("ZIZO! ZIZO! LORD OF PROGRESS!!")
 			if(!do_after(user, 5 SECONDS))
 				return
 			user.say("ZIZO! ZIZO! HEED MY CALL!!")
@@ -1173,7 +1173,7 @@
 			user.say("ZIZO, hear my promise!")
 			if(!do_after(user, 5 SECONDS))
 				return
-			user.say("By her progress, I am forged anew!")
+			user.say("By his progress, I am forged anew!")
 			if(!do_after(user, 5 SECONDS))
 				return
 			icon_state = "zizo_active"
@@ -1337,7 +1337,7 @@
 		new /obj/item/coin/gold/pile(get_turf(src))
 		new /obj/item/coin/gold/pile(get_turf(src))
 		new /obj/item/coin/gold/pile(get_turf(src))
-		priority_announce("The Noble Gift of Astrata was tainted! The Sun, she is weeping!", "Bad Omen", 'sound/misc/evilevent.ogg')
+		priority_announce("The Noble Gift of Astrata was tainted! The Sun, he is weeping!", "Bad Omen", 'sound/misc/evilevent.ogg')
 		var/datum/round_event_control/lightsout/E = new()
 		E.req_omen = FALSE
 		E.earliest_start = 0

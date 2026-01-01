@@ -150,7 +150,7 @@ GLOBAL_LIST_INIT(ritualslist, build_zizo_rituals())
 	if(!target)
 		return
 	if(target.mob_biotypes & MOB_UNDEAD)
-		to_chat(user, span_warning("The fruits of her work prevent me from changing my appearance..."))
+		to_chat(user, span_warning("The fruits of his work prevent me from changing my appearance..."))
 		return
 	target.randomize_human_appearance()
 	target.regenerate_clothes()
@@ -678,7 +678,7 @@ GLOBAL_LIST_INIT(ritualslist, build_zizo_rituals())
 	RULER.gib()
 	SSmapping.retainer.cult_ascended = TRUE
 	addomen(OMEN_ASCEND)
-	to_chat(cultist, span_userdanger("I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! ZIZO SMILES UPON ME WITH MALICE IN HER EYES TOWARD THE ONES WHO LACK KNOWLEDGE AND UNDERSTANDING!"))
+	to_chat(cultist, span_userdanger("I HAVE DONE IT! I HAVE REACHED A HIGHER FORM! ZIZO SMILES UPON ME WITH MALICE IN HIS EYES TOWARD THE ONES WHO LACK KNOWLEDGE AND UNDERSTANDING!"))
 	var/mob/living/trl = new /mob/living/simple_animal/hostile/retaliate/blood/ascended(center)
 	cultist.mind?.transfer_to(trl)
 	cultist.gib()

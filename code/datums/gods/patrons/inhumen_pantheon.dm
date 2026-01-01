@@ -21,8 +21,8 @@
 
 /datum/patron/inhumen/zizo
 	name = ZIZO
-	domain = "Ascended Goddess of Forbidden Magic, Domination, and Power"
-	desc = "Snow elf who slaughtered her kind in ascension, conquered and remade the Dark Elven empires in her name. She proves that any with will can achieve divinity... though at a cost."
+	domain = "Ascended God of Forbidden Magic, Domination, and Power"
+	desc = "Snow elf who slaughtered his kind in ascension, conquered and remade the Dark Elven empires in his name. He proves that any with will can achieve divinity... though at a cost."
 	flaws = "Hubris, Superiority, Fury"
 	worshippers = "Dark Elves, Aspirants, Necromancers, Misandrists"
 	sins = "Pearl-clutching, Moralism, Wastefulness"
@@ -31,7 +31,7 @@
 	devotion_holder = /datum/devotion/inhumen/zizo
 	confess_lines = list(
 		"I FOLLOW THE PATH OF ZIZO!",
-		"LONG LIVE QUEEN ZIZO!",
+		"LONG LIVE KING ZIZO!",
 		"ZIZO SHOWED ME THE WAY!",
 	)
 	storyteller = /datum/storyteller/zizo
@@ -77,7 +77,7 @@
 /datum/patron/inhumen/baotha
 	name = BAOTHA
 	domain = "Goddess of Drugs, Self-Preservation, and Remorseless Joy"	//Bright-dyed hair falls within 'remorseless joy.' Joy for one's self at expense of the setting. Same for her music taste.
-	desc = "Ascended, formerly disgraced tiefling queen, notorious for having a mind elsewhere. Drove her kingdom into the ground through her demands and addictions. The first tiefling noble, last tiefling noble, and sole reason there are no more tiefling nobles. As she preaches to her followers, 'Joy at all costs!'"
+	desc = "Ascended, formerly disgraced tiefling queen, notorious for having a mind elsewhere. Drove her kingdom into the ground through her demands and addictions. The first tiefling noble, last tiefling noble, and sole reason there are no more tiefling nobles. She flees from Astrata, preaching to her followers, 'Joy at all costs!'"
 	flaws = "Manipulation, Self-Destruction, Willingness to Sacrifice Others"
 	worshippers = "Addicts, Hedonists, Pink-Haired Harlots"
 	sins = "Sobriety, Self-Sacrifice, Faltering Willpower"
@@ -94,8 +94,8 @@
 /// Maniac Patron - Their mind is broken by secrets of Zizo/Graggar combined. They quite possibly know the reality of what happens outside the planet. They may think this is all a game. They are clearly insane.
 /datum/patron/inhumen/graggar_zizo
 	name = "Graggazo"
-	domain = "Ascended God who slaughtered her kind in ascension, the Dark Sini-Star of Unnatural Beasts, Forbidden Magic, and Unbridled Hatred."
-	desc = "Became the first snow orc upon ascension through his habit of consuming the bodies of those he conquered. His forces continue to ravage the lands in her name. He proves that any with will can achieve divinity... though at a cost. MAKE THIS MAKE SENSE. MY MIND! MY MIND!!"
+	domain = "Ascended God who slaughtered his kind in ascension, the Dark Sini-Star of Unnatural Beasts, Forbidden Magic, and Unbridled Hatred."
+	desc = "Became the first snow orc upon ascension through his habit of consuming the bodies of those he conquered. His forces continue to ravage the lands in his name. He proves that any with will can achieve divinity... though at a cost. MAKE THIS MAKE SENSE. MY MIND! MY MIND!!"
 	flaws = "Nothing, Everything, Nothing"
 	worshippers = "Broken Minds, Overshared Secrets, Space-Faring Species Like You, Misanthropes"
 	sins = "The Unseen, Secrets, Worthless Pigs"

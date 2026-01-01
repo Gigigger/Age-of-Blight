@@ -1,6 +1,6 @@
 /datum/job/undertaker
 	title = "Gravetender"
-	tutorial = "As a servant of Necra, you embody the sanctity of her domain, \
+	tutorial = "As a servant of Necra, you embody the sanctity of his domain, \
 	ensuring the dead rest peacefully within the earth. \
 	You are the bane of grave robbers and necromancers, \
 	and your holy magic brings undead back into Necra's embrace: \

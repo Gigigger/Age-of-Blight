@@ -416,19 +416,19 @@ GLOBAL_LIST_INIT(badomens, list())
 		if(OMEN_ROUNDSTART)
 			used = pick( \
 				"Zizo.", \
-				"Unholy invocations channel the will of Her.", \
+				"Unholy invocations channel the will of Him.", \
 				"Forbidden rituals cause echoes through the plane.", \
-				"Whispers of the Dark Lady in the shadows.", \
+				"Whispers of the Dark Lord in the shadows.", \
 				"The servants of Zizo undermine the Ten.", \
-				"Her influence becomes more tangible...", \
+				"His influence becomes more tangible...", \
 				"A foul curse temporarily takes the land.", \
 				"The dead churn and dig at their graves.", \
 			)
 			title = pick( \
 				"Zizo Sneers", \
-				"The Dark Lady Watches", \
+				"The Dark Lord Watches", \
 				"Zizo's Attention", \
-				"She Peers", \
+				"He Peers", \
 				"Zizo Smirks", \
 			)
 			sound = 'sound/misc/gods/zizo_omen.ogg'
@@ -439,7 +439,7 @@ GLOBAL_LIST_INIT(badomens, list())
 		if(OMEN_NOBLEDEATH)
 			used = "A Noble has perished."
 		if(OMEN_SUNSTEAL)
-			used = "The Sun, she is wounded!"
+			used = "The Sun, he is wounded!"
 		if(OMEN_SKELETONSIEGE)
 			used = "Unwelcome visitors!"
 		if("ascend")

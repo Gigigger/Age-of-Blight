@@ -24,7 +24,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 	if(!challenger)
 		return
 
-	priority_announce("[challenger.name] challenges Astrata's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Astrata swears revenge to any who dare to defy her. Choose your side, or stand aside...", "Schism within the Ten", 'sound/magic/marked.ogg')
+	priority_announce("[challenger.name] challenges Astrata's leadership! The outcome of this conflict will be decided in less than 2 daes by a sheer number of their alive supporters. [challenger.name] promises great rewards to the faithful if victorious, while Astrata swears revenge to any who dare to defy him. Choose your side, or stand aside...", "Schism within the Ten", 'sound/magic/marked.ogg')
 	for(var/mob/living/carbon/human/H in GLOB.human_list)
 		setup_mob(H)
 
@@ -78,7 +78,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen confirms her status as a true heir of Psydon!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
+		priority_announce("Astrata's light prevails over the challenge of [challenger.name]! The Sun King confirms his status as a true heir of Psydon!", "Astrata is VICTORIOUS!", 'sound/magic/ahh2.ogg')
 		adjust_storyteller_influence(ASTRATA, 250)
 		adjust_storyteller_influence(challenger.name, -100)
 
@@ -94,7 +94,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 						to_chat(supporter, span_notice("Astrata's light prevails, but your late support goes unrewarded."))
 					break
 			else if(supporter)
-				to_chat(supporter, span_notice("Astrata's light prevails over the challenge of [challenger.name]! The Sun Queen expected no less than your total support."))
+				to_chat(supporter, span_notice("Astrata's light prevails over the challenge of [challenger.name]! The Sun King expected no less than your total support."))
 
 		for(var/datum/weakref/supporter_ref in supporters_challenger)
 			var/mob/living/carbon/human/supporter = supporter_ref.resolve()
@@ -106,7 +106,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 		cleanup_schism()
 
 	else if(challenger_count > astrata_count)
-		priority_announce("[challenger.name]'s challenge succeeds against Astrata's tyranny! The Sun Queen is grudgingly forced to share power with [challenger.name]...", "[challenger.name] RULES!", 'sound/magic/inspire_02.ogg')
+		priority_announce("[challenger.name]'s challenge succeeds against Astrata's tyranny! The Sun King is grudgingly forced to share power with [challenger.name]...", "[challenger.name] RULES!", 'sound/magic/inspire_02.ogg')
 		adjust_storyteller_influence(challenger.name, 200)
 		adjust_storyteller_influence(ASTRATA, -50)
 
@@ -222,7 +222,7 @@ GLOBAL_LIST_EMPTY(tennite_schisms)
 			challenger_count++
 
 	if(astrata_count >= challenger_count)
-		priority_announce("Astrata is leading in the schism! She will have her revenge soon enough...", "Schism Rages On", 'sound/magic/marked.ogg')
+		priority_announce("Astrata is leading in the schism! He will have his revenge soon enough...", "Schism Rages On", 'sound/magic/marked.ogg')
 	else if(challenger_count > astrata_count)
 		priority_announce("[challenger.name] is leading in the schism! Astrata will soon be forced to yield...", "Schism Rages On", 'sound/magic/marked.ogg')
 

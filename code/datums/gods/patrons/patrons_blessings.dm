@@ -176,7 +176,7 @@
 		),
 
 		/// (Repeat this block, tailored for each god)
-		/// Astrata - The Sun Queen
+		/// Astrata - The Sun King
 		/datum/patron/divine/astrata = list(
 			/datum/status_effect/buff/beastsense = "Astrata commandeth: \"LET THY SIGHT BE CLEARED. THE LIGHT REVEALETH ALL.\"",
 			/datum/status_effect/buff/trollshape = "Astrata proclaimeth: \"BECOME THE HAMMER OF MINE WILL. STRIKE WITH PURPOSE.\"",
@@ -288,7 +288,7 @@
 			/datum/status_effect/buff/barbrage = "Matthios yells: \"Break stuff. Blame someone else!\""
 		),
 
-		/// Necra - The Undermaiden
+		/// Necra - The Underlord
 		/datum/patron/divine/necra = list(
 			/datum/status_effect/buff/beastsense = "Necra murmurs: \"The grave knows your scent... and waits.\"",
 			/datum/status_effect/buff/trollshape = "Necra hums: \"Mass returns to earth. Let the soil remember you.\"",
@@ -368,12 +368,12 @@
 			/datum/status_effect/buff/barbrage = "Xylix roars: \"Break it! Then break it twice!\""
 		),
 
-		/// Zizo - The Ascended Goddess
+		/// Zizo - The Ascended God
 		/datum/patron/inhumen/zizo = list(
 			/datum/status_effect/buff/beastsense = "Zizo hisses: \"They crawl. They beg. They are prey, inferior. Hunt them.\"",
 			/datum/status_effect/buff/trollshape = "Zizo croons: \"This form? Power. Strength. Craft your flesh. This is my gift.\"",
 			/datum/status_effect/buff/divine_beauty = "Zizo sneers: \"They shall kneel before this visage. And they shall weep.\"",
-			/datum/status_effect/buff/call_to_arms = "Zizo commands: \"Fight. Break them. Show the strength and cunning of your queen.\"",
+			/datum/status_effect/buff/call_to_arms = "Zizo commands: \"Fight. Break them. Show the strength and cunning of your king.\"",
 			/datum/status_effect/buff/craft_buff = "Zizo states: \"Strong. Flexible Show the craft is worthy. Weave flesh like linen.\"",
 			/datum/status_effect/buff/foodbuff = "Zizo smirks: \"Eat. Power grows.\"",
 			/datum/status_effect/buff/clean_plus = "Zizo sneers: \"Clean. Now you are worthy of gaze.\"",
