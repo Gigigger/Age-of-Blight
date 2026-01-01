@@ -88,6 +88,7 @@
 	if(!wound.apply_to_bodypart(src, silent, crit_message))
 		qdel(wound)
 		return
+	owner.invalidate_wound_cache()
 	return wound
 
 /// Removes a wound from this bodypart, removing any associated effects
@@ -99,6 +100,7 @@
 	. = wound.remove_from_bodypart()
 	if(.)
 		qdel(wound)
+		owner?.invalidate_wound_cache()
 
 /// Check to see if we can apply a bleeding wound on this bodypart
 /obj/item/bodypart/proc/can_bloody_wound()
@@ -534,6 +536,7 @@
 			owner.next_attack_msg += " <span class='userdanger'>[embedder] runs through [owner]'s [src.name]!</span>"
 		if(can_be_disabled)
 			update_disabled()
+		owner.invalidate_embedded_cache()
 	return TRUE
 
 /// Removes an embedded object from this bodypart
@@ -559,6 +562,7 @@
 			owner.remove_stress(/datum/stress_event/embedded)
 		if(can_be_disabled)
 			update_disabled()
+		owner.invalidate_embedded_cache()
 	return TRUE
 
 /obj/item/bodypart/proc/try_bandage(obj/item/new_bandage)
