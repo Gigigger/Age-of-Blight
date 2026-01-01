@@ -71,7 +71,7 @@
 		to_chat(user, span_warning("The Sun is already stolen."))
 		return
 	if(GLOB.tod == "night")
-		to_chat(user, span_warning("The Moon is watching. I must wait for Her to return."))
+		to_chat(user, span_warning("The Moon is watching. I must wait for Him to return."))
 		return
 	if(!user.has_bloodpool_cost(SUN_STEAL_COST))
 		to_chat(user, span_warning("I do not have enough vitae, I need [SUN_STEAL_COST] vitae to steal the Sun."))

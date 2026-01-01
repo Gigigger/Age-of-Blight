@@ -386,7 +386,7 @@
 	stress_change = -7
 
 /datum/stress_event/bathcleaned
-	desc = "<span class='nicegreen'>I feel like I've been scrubbed by a Goddess!</span>\n"
+	desc = "<span class='nicegreen'>I feel like I've been scrubbed by a God!</span>\n"
 	stress_change = -5
 	timer = 10 MINUTES
 

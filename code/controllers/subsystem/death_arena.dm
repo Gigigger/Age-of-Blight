@@ -215,7 +215,7 @@ SUBSYSTEM_DEF(death_arena)
 
 /obj/structure/underworld/necra
 	name = "Necra"
-	desc = "The Undermaiden herself, in her true form. The most ancient of living gods. She observes your battles gleefully, gratitude in her eyes to be relieved from the arduousness of eternity. Her close friend and confidant, Ravox, sits by her side. The two must have worked hard to restructure the underworld like this. They seem pleased with their work."
+	desc = "The Underlord himself, in his true form. The most ancient of living gods. He observes your battles gleefully, gratitude in his eyes to be relieved from the arduousness of eternity. His close friend and confidant, Ravox, sits by his side. The two must have worked hard to restructure the underworld like this. They seem pleased with their work."
 	icon = 'icons/roguetown/underworld/necra.dmi'
 	icon_state = "necra"
 	layer = ABOVE_MOB_LAYER

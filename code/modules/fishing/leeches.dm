@@ -260,7 +260,7 @@
 				"Curse your Beast God!", \
 				"Noc's magick is nothing to Zizo!", \
 				"Abyssor is but a grain of salt!", \
-				"Pestra is the most foul of goddesses!", \
+				"Pestra is the most foul of gods!", \
 				"Ravox's justice is flawed and dull!", \
 				"Rip the Sun Tyrant from the sky!", \
 				"Xylix is the tongue that must be severed off!", \

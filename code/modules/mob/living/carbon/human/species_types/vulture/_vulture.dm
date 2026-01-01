@@ -15,7 +15,7 @@
 	With long, hanging beaks clacking as they breathe, other species find them dipleasing at best and repulsive at worst. Despite this, their eyes betray great intelligence behind otherwise monstrosity.	\
 	\n\n\
 	Born of carcinogens, pollution, mechanical and biological waste, these creatures were not always sentient. \
-	Through their appearance, accidental origin, and innate sicknesses, they have gained the fascination and uplifting of Pestra and inherited aspects of the serpentine goddess in turn. \
+	Through their appearance, accidental origin, and innate sicknesses, they have gained the fascination and uplifting of Pestra and inherited aspects of the serpentine god in turn. \
 	Medicators, as they called themselves, carry with them the bedside manners, or lack thereof, of the worst Pestrans. \
 	Their culture holds discovery and medicinal breakthroughs in the highest regard, be it through experimentation to shift their own ailments or others'. \
 	Medicators care little about the nickname granted to them by other species, 'feculents,' so long as their medical prowess is not subject to question. \

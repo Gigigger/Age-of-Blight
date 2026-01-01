@@ -525,7 +525,7 @@
 
 /obj/item/clothing/head/helmet/visored/zizo
 	name = "darksteel barbute"
-	desc = "A darksteel barbute. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
+	desc = "A darksteel barbute. This one has an adjustable visor. Called forth from the edge of what should be known. In His name."
 	icon_state = "zizobarbute"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'

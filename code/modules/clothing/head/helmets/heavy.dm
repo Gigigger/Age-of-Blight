@@ -134,7 +134,7 @@
 
 /obj/item/clothing/head/helmet/heavy/zizo
 	name = "darksteel frog helmet"
-	desc = "A darksteel frog helmet. This one has an adjustable visor. Called forth from the edge of what should be known. In Her name."
+	desc = "A darksteel frog helmet. This one has an adjustable visor. Called forth from the edge of what should be known. In His name."
 	adjustable = CAN_CADJUST
 	icon_state = "zizofrogmouth"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'
@@ -243,7 +243,7 @@
 //............... Necra Helmet ............... //
 /obj/item/clothing/head/helmet/heavy/necked/necra
 	name = "necra helmet"
-	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Undermaiden."
+	desc = "A reinforced helmet shaped into the visage of a skull with a maille neck cover under the cloth. A symbol of authority for the battle servants of the Underlord."
 	icon_state = "necrahelm"
 	item_weight = 6 * IRON_MULTIPLIER
 

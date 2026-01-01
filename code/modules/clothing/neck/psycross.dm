@@ -36,7 +36,7 @@
 
 /obj/item/clothing/neck/psycross/silver/astrata
 	name = "amulet of Astrata"
-	desc = "Blessed be everything the light of the sun touches, for it is protected by Her grace."
+	desc = "Blessed be everything the light of the sun touches, for it is protected by His grace."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 
@@ -60,7 +60,7 @@
 
 /obj/item/clothing/neck/psycross/silver/necra
 	name = "amulet of Necra"
-	desc = "Where, grave, thy victory? I triumph still while the Veiled Lady abides by me."
+	desc = "Where, grave, thy victory? I triumph still while the Veiled Lord abides by me."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 

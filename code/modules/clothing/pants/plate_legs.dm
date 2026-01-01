@@ -98,7 +98,7 @@
 
 /obj/item/clothing/pants/platelegs/zizo
 	name = "darksteel garments"
-	desc = "Leg garments worn by true anointed of the Dame of Progress. In Her name."
+	desc = "Leg garments worn by true anointed of the Lord of Progress. In His name."
 	icon_state = "zizocloth"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'

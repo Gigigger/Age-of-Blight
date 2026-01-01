@@ -188,7 +188,7 @@
 
 /obj/item/clothing/shoes/boots/armor/zizo
 	name = "darksteel boots"
-	desc = "Plate boots. Called forth from the edge of what should be known. In Her name."
+	desc = "Plate boots. Called forth from the edge of what should be known. In His name."
 	icon_state = "zizoboots"
 	item_state = "zizoboots"
 	icon = 'icons/roguetown/clothing/special/evilarmor.dmi'

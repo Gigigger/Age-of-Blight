@@ -739,7 +739,7 @@
 
 /obj/structure/fluff/statue/astrata
 	name = "statue of Astrata"
-	desc = "Astrata, the Sun Queen, reigns over light, order, and conquest. She is worshipped and feared in equal measure."
+	desc = "Astrata, the Sun King, reigns over light, order, and conquest. He is worshipped and feared in equal measure."
 	icon = 'icons/roguetown/misc/tallandwide.dmi'
 	icon_state = "astrata"
 	max_integrity = 100 // You wanted descructible statues, you'll get them.
