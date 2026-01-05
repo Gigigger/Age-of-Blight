@@ -585,8 +585,18 @@
 		message = cultslur(message)
 
 	message = capitalize(message)
+	message = ensure_terminal_punctuation(message)
 
 	return message
+
+/mob/living/proc/ensure_terminal_punctuation(message)
+	var/trimmed = trim_right(message)
+	if(!trimmed)
+		return message
+	var/last_char = copytext_char(trimmed, -1)
+	if(last_char == "." || last_char == "!" || last_char == "?" || last_char == "~")
+		return message
+	return "[trimmed]."
 
 /mob/living/proc/radio(message, list/message_mods = list(), list/spans, language)
 	switch(message_mods[RADIO_EXTENSION])
