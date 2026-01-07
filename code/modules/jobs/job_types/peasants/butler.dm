@@ -57,6 +57,7 @@
 		TRAIT_NOPAINSTUN,
 		TRAIT_HARDDISMEMBER,
 		TRAIT_EMPATH,
+		TRAIT_INDENTURED,
 	)
 
 /datum/job/butler/after_spawn(mob/living/carbon/human/spawned, client/player_client)
