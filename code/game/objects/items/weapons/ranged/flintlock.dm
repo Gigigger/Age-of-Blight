@@ -43,6 +43,9 @@
 	var/ramrod_inserted = TRUE
 	var/powdered = FALSE
 	var/wound = FALSE
+	var/can_spin = TRUE
+	var/last_spunned
+	var/spin_cooldown = 3 SECONDS
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/update_icon_state()
 	. = ..()
@@ -230,6 +233,45 @@
 				return 0
 
 	return ..()
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/pistol/attack_self(mob/living/user)
+	var/string = "smoothly"
+	var/list/strings_noob = list("unsurely", "nervously", "anxiously", "timidly", "shakily", "clumsily", "fumblingly", "awkwardly")
+	var/list/strings_moderate = list("smoothly", "confidently", "determinately", "calmly", "skillfully", "decisively")
+	var/list/strings_pro = list("masterfully", "expertly", "flawlessly", "elegantly", "artfully", "impeccably")
+	var/firearm_skill = (user?.mind ? user.get_skill_level(/datum/skill/combat/firearms) : 1)
+	var/noob_spin_sound = 'sound/combat/weaponr1.ogg'
+	var/pro_spin_sound = 'modular_helmsguard/arquebus/sound/gunspin.ogg'
+	var/spin_sound
+	if(firearm_skill <= 2)
+		string = pick(strings_noob)
+		spin_sound = noob_spin_sound
+	if((firearm_skill > 2) && (firearm_skill <= 4))
+		string = pick(strings_moderate)
+		spin_sound = pro_spin_sound
+	if((firearm_skill > 4) && (firearm_skill <= 6))
+		string = pick(strings_pro)
+		spin_sound = pro_spin_sound
+	if(world.time > last_spunned + spin_cooldown)
+		can_spin = TRUE
+	if(can_spin)
+		user.visible_message("<span class='emote'>[user] spins the [src] around their fingers [string]!</span>")
+		playsound(src, spin_sound, 100, FALSE, ignore_walls = FALSE)
+		last_spunned = world.time
+		if(firearm_skill <= 2)
+			if(prob(35))
+				shoot_live_shot(message = 0)
+				user.visible_message("<span class='danger'>[user] accidentally discharged the [src]!</span>")
+		if(firearm_skill <= 3)
+			if(prob(50))
+				user.visible_message("<span class='danger'>[user] accidentally dropped the [src]!</span>")
+				user.dropItemToGround(src)
+		can_spin = FALSE
+
+
+
+
 
 /obj/item/ammo_box/magazine/internal/shot/musk
 	ammo_type = /obj/item/ammo_casing/caseless/bullet
