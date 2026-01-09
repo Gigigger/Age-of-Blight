@@ -7,8 +7,8 @@
 	department_flag = COMPANY
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = "Station"
-	total_positions = 1
-	spawn_positions = 1
+	total_positions = 3
+	spawn_positions = 3
 	display_order = JDO_SHOPHAND
 	give_bank_account = 10
 	bypass_lastclass = TRUE
@@ -68,4 +68,4 @@
 	shirt = /obj/item/clothing/shirt/exoticsilkbra
 	belt = /obj/item/storage/belt/leather/exoticsilkbelt
 	shoes = /obj/item/clothing/shoes/anklets
-	neck = /obj/item/clothing/neck/gorget/slave_gorget/female
+	neck = /obj/item/clothing/neck/slave_collar/female

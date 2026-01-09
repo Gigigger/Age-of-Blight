@@ -288,15 +288,25 @@
 /datum/supply_pack/weapons/ranged
 	group = "Weapons (Ranged)"
 
-/datum/supply_pack/weapons/ranged/puffer
+/datum/supply_pack/weapons/ranged/puffer //vanderlin
 	name = "Smuggled Püffer"
 	cost = 500
 	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol
 
-/datum/supply_pack/weapons/ranged/musket
-	name = "Smuggled Musket"
+/datum/supply_pack/weapons/ranged/musket //vanderlin
+	name = "Flintlock Musket"
 	cost = 750 //needs balancing
 	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/pistol/musket
+
+/datum/supply_pack/weapons/ranged/arquebus  //helmsguard
+	name = "Arquebus Musket"
+	cost = 200 //needs balancing
+	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus_musket
+
+/datum/supply_pack/weapons/ranged/arquebusp  //helmsguard
+	name = "Arquebus Pistol"
+	cost = 180 //needs balancing
+	contains = /obj/item/gun/ballistic/revolver/grenadelauncher/arquebus_pistol
 
 /datum/supply_pack/weapons/ranged/cannon
 	name = "Cannon"
@@ -380,12 +390,12 @@
 
 /datum/supply_pack/weapons/ammo/bullets
 	name = "Pouch of Lead Bullets"
-	cost = 100
+	cost = 60
 	contains = /obj/item/storage/belt/pouch/bullets
 
 /datum/supply_pack/weapons/ammo/bullets
 	name = "Gunpowder Flask"
-	cost = 150
+	cost = 100
 	contains = /obj/item/reagent_containers/glass/bottle/aflask
 
 /datum/supply_pack/weapons/ammo/cannonball

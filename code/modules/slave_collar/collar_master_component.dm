@@ -1,4 +1,5 @@
 #define COLLAR_TRAIT "collar_master"
+#define FORCED_AROUSAL_DURATION (30 SECONDS)
 
 GLOBAL_LIST_EMPTY(collar_masters)
 
@@ -21,6 +22,7 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	var/list/remote_control_pet_skills
 	var/list/remote_control_pet_experience
 	var/list/forced_arousal_timers = list()
+	var/list/forced_arousal_end_times = list()
 
 /datum/component/collar_master/Initialize(...)
 	. = ..()
@@ -80,6 +82,16 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	var/mob/living/carbon/human/pet = source
 	if(pet)
 		INVOKE_ASYNC(src, PROC_REF(cleanup_pet), pet)
+
+/datum/component/collar_master/proc/on_master_death(datum/source)
+	SIGNAL_HANDLER
+	if(remote_control_pet_body)
+		INVOKE_ASYNC(src, PROC_REF(end_remote_control))
+
+/datum/component/collar_master/proc/on_master_deleted(datum/source, force)
+	SIGNAL_HANDLER
+	if(remote_control_pet_body)
+		INVOKE_ASYNC(src, PROC_REF(end_remote_control))
 
 /datum/component/collar_master/proc/shock_pet(mob/living/carbon/human/pet, intensity = 10)
 	if(!pet || !(pet in my_pets))
@@ -247,6 +259,7 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	to_chat(pet, span_warning("The collar hums, flooding you with relentless arousal."))
 	if(mindparent?.current)
 		to_chat(mindparent.current, span_notice("You set [pet]'s collar to steadily increase their arousal."))
+	forced_arousal_end_times[pet] = world.time + FORCED_AROUSAL_DURATION
 	var/id = addtimer(CALLBACK(src, PROC_REF(ramp_arousal_tick), pet), 2 SECONDS, TIMER_STOPPABLE | TIMER_LOOP)
 	if(id)
 		forced_arousal_timers[pet] = id
@@ -256,13 +269,22 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	if(!pet || QDELETED(pet) || !(pet in my_pets) || pet.stat >= DEAD)
 		stop_forced_arousal(pet)
 		return
+	var/end_time = forced_arousal_end_times[pet]
+	if(end_time && world.time >= end_time)
+		stop_forced_arousal(pet)
+		to_chat(pet, span_notice("The collar's teasing hum dies down, letting your arousal ebb."))
+		if(mindparent?.current)
+			to_chat(mindparent.current, span_notice("[pet]'s collar stops enforcing arousal."))
+		return
 	SEND_SIGNAL(pet, COMSIG_SEX_ADJUST_AROUSAL, 2)
 
 /datum/component/collar_master/proc/stop_forced_arousal(mob/living/carbon/human/pet)
 	if(!forced_arousal_timers[pet])
+		forced_arousal_end_times -= pet
 		return
 	var/id = forced_arousal_timers[pet]
 	forced_arousal_timers -= pet
+	forced_arousal_end_times -= pet
 	if(id)
 		deltimer(id)
 	return TRUE
@@ -335,6 +357,8 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	remote_control_pet_body = pet
 	remote_control_pet_mind = pet_mind
 	remote_control_pet_ghost = ghost
+	RegisterSignal(master_body, COMSIG_MOB_DEATH, PROC_REF(on_master_death))
+	RegisterSignal(master_body, COMSIG_PARENT_QDELETING, PROC_REF(on_master_deleted))
 	var/datum/skill_holder/master_skills = master_body.ensure_skills()
 	var/datum/skill_holder/pet_skills = pet.ensure_skills()
 	remote_control_master_skills = master_skills.known_skills.Copy()
@@ -358,6 +382,8 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	var/mob/living/carbon/human/pet_body = remote_control_pet_body
 	var/datum/mind/pet_mind = remote_control_pet_mind
 	var/mob/dead/observer/pet_ghost = remote_control_pet_ghost
+	if(master_body)
+		UnregisterSignal(master_body, list(COMSIG_MOB_DEATH, COMSIG_PARENT_QDELETING))
 	remote_control_master_body = null
 	remote_control_pet_body = null
 	remote_control_pet_mind = null

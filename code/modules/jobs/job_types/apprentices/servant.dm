@@ -10,8 +10,8 @@
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	display_order = JDO_SERVANT
 	faction = FACTION_TOWN
-	total_positions = 6
-	spawn_positions = 6
+	total_positions = 3
+	spawn_positions = 3
 	bypass_lastclass = TRUE
 	allowed_ages = ALL_AGES_LIST_CHILD
 	allowed_races = RACES_PLAYER_ALL
@@ -32,6 +32,9 @@
 			pants = /obj/item/clothing/pants/trou/formal/shorts
 		belt = /obj/item/storage/belt/leather/suspenders
 		shoes = /obj/item/clothing/shoes/boots
+		beltl = /obj/item/storage/keyring/manorguard
+		backl = /obj/item/storage/backpack/satchel
+		backpack_contents = list(/obj/item/recipe_book/cooking = 1, /obj/item/storage/belt/pouch/coins/poor = 1, /obj/item/rope/chain = 2)
 	else
 		armor = /obj/item/clothing/shirt/dress/maid/servant
 		shoes = /obj/item/clothing/shoes/simpleshoes
