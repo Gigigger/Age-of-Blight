@@ -5,6 +5,7 @@
 /obj/item/clothing/head/helmet/graggar/ogre
 	name = "graggar's champion helmet"
 	desc = "The mark of Graggar's rampage, this is the helmet of his greatest warrior, his favorite child."
+	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "warlhelmet"
 	allowed_race = list(SPEC_ID_OGRE)
@@ -35,7 +36,8 @@
 /obj/item/clothing/gloves/plate/ogre
 	name = "oversized gauntlets"
 	desc = "Huge, iron gauntlets - the size of a human head."
-	sleeved = OGRE_ONMOB_SLEEVES
+	icon = 'icons/roguetown/clothing/gloves.dmi'
+	sleeved = OGRE_ONMOB_ICON
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "ogregrabbers"
 	allowed_race = list(SPEC_ID_OGRE)
@@ -43,6 +45,7 @@
 /obj/item/clothing/shoes/boots/armor/ogre
 	name = "giant plate boots"
 	desc = "When giants march to war, they need two things above all else. Something to eat, and boots to stomp around."
+	icon = 'icons/roguetown/clothing/feet.dmi'
 	sleeved = OGRE_ONMOB_ICON
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "ogre_plateboots"
@@ -51,7 +54,8 @@
 /obj/item/clothing/wrists/bracers/ogre
 	name = "thick bracers"
 	desc = "Normal humans can fit a leg through this hunk of steel."
-	sleeved = OGRE_ONMOB_SLEEVES
+	icon = 'icons/roguetown/clothing/wrists.dmi'
+	sleeved = OGRE_ONMOB_ICON
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "ogre_bracers"
 	allowed_race = list(SPEC_ID_OGRE)
@@ -59,6 +63,7 @@
 /obj/item/clothing/neck/gorget/ogre
 	name = "giant gorget"
 	desc = "For the hardest working neck in the province, since you know people are going to target it first."
+	icon = 'icons/roguetown/clothing/neck.dmi'
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "ogre_gorget"
 	allowed_race = list(SPEC_ID_OGRE)
@@ -66,6 +71,7 @@
 /obj/item/storage/belt/leather/ogre
 	name = "giant belt"
 	desc = "When you have to tighten a belt of this size, best start keeping your tastiest allies close."
+	icon = 'icons/roguetown/clothing/belts.dmi'
 	sleeved = OGRE_ONMOB_ICON
 	mob_overlay_icon = OGRE_ONMOB_ICON
 	icon_state = "ogre_belt"

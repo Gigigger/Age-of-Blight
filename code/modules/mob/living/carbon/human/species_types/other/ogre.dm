@@ -20,17 +20,18 @@
 	use_skintones = TRUE
 	possible_ages = ALL_AGES_LIST
 	changesource_flags = WABBAJACK
-	bleed_mod = 0.5
+	bleed_mod = 0.2
 	pain_mod = 0.5
 
 	limbs_icon_m = 'icons/roguetown/mob/bodies/m/ogre.dmi'
 	limbs_icon_f = 'icons/roguetown/mob/bodies/f/ogre.dmi'
-	
+
 	dam_icon_m = 'icons/roguetown/mob/bodies/dam/ogre.dmi'
 	dam_icon_f = 'icons/roguetown/mob/bodies/dam/ogre.dmi'
 
 	soundpack_m = /datum/voicepack/male/warrior
 	soundpack_f = /datum/voicepack/female/dwarf
+	swap_female_clothes = TRUE
 
 	offset_features_m = list(
 		OFFSET_RING = list(0,1),\
@@ -78,8 +79,8 @@
 		OFFSET_BREASTS = list(0, 3),\
 	)
 
-	specstats_m = list(STATKEY_STR = 2, STATKEY_CON = 2, STATKEY_END = 2, STATKEY_INT = -3, STATKEY_SPD = -1)
-	specstats_f = list(STATKEY_STR = 2, STATKEY_CON = 2, STATKEY_END = 2, STATKEY_INT = -3, STATKEY_SPD = -1)
+	specstats_m = list(STATKEY_STR = 5, STATKEY_CON = 5, STATKEY_END = 5, STATKEY_INT = -3, STATKEY_SPD = -2)
+	specstats_f = list(STATKEY_STR = 5, STATKEY_CON = 5, STATKEY_END = 5, STATKEY_INT = -3, STATKEY_SPD = -2)
 
 	enflamed_icon = "widefire"
 
