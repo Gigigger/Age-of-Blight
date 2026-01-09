@@ -13,13 +13,15 @@
 	req_bar = /obj/item/ingot/tin
 	craftdiff = 0
 ////////////////////////////////////
-
+/*
 /datum/anvil_recipe/weapons/tin/lead_bullet //guys how are you making LEAD bullets out of TIN?
 	name = "4x Lead Bullets"
 	recipe_name = "a handful of lead bullets."
 	created_item = /obj/item/ammo_casing/caseless/bullet
 	craftdiff = 1
 	createditem_extra = 3
+*/ // commented out by Stonedelf because lead bullets from tin is silly
+
 
 /datum/anvil_recipe/weapons/tin/grenade_shell
 	name = "2x Grenade shells"
@@ -191,6 +193,15 @@
 	createditem_extra = 4
 	i_type = "Ammo"
 
+/datum/anvil_recipe/weapons/iron/bullets // bullets made of iron
+	name = "5x Lead Balls"
+	recipe_name = "five lead balls"
+	appro_skill = /datum/skill/craft/engineering
+	created_item = /obj/item/ammo_casing/caseless/bullet
+	createditem_extra = 4
+	i_type = "Ammo"
+	craftdiff = 0
+
 /datum/anvil_recipe/weapons/iron/axe_iron
 	name = "Iron Axe (+Stick)"
 	recipe_name = "an Axe"
@@ -250,6 +261,16 @@
 	created_item = /obj/item/weapon/knife/dagger
 	createditem_extra = 1
 	craftdiff = 0 // To train with
+
+
+/datum/anvil_recipe/weapons/iron/bayonet_iron //stonedelf's addition
+	name = "Bayonet x2"
+	recipe_name = "a couple Bayonets"
+	appro_skill = /datum/skill/craft/weaponsmithing
+	created_item = /obj/item/weapon/knife/dagger/bayonet
+	createditem_extra = 1
+	craftdiff = 0 // To train with
+
 
 /datum/anvil_recipe/weapons/iron/njora
 	name = "2x Iron Seme's"
@@ -697,13 +718,13 @@
 	recipe_name = "a Steel Kukri"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	created_item = /obj/item/weapon/knife/dagger/kukri/steel
-	
-/datum/anvil_recipe/weapons/steel/knuckles	
+
+/datum/anvil_recipe/weapons/steel/knuckles
 	name = "Knuckles"
 	recipe_name = "a Steel Knuckles"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	created_item = /obj/item/weapon/knuckles
-	
+
 /datum/anvil_recipe/weapons/steel/dagger_steel
 	name = "2x Steel Daggers"
 	recipe_name = "a couple Daggers"
