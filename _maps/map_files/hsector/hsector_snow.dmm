@@ -14629,8 +14629,9 @@
 	ceiling_protected = 1
 	})
 "hdj" = (
-/turf/open/floor/flesh,
-/area/under/rmh_bedrock)
+/obj/machinery/light/fueled/wallfire/candle/r,
+/turf/open/floor/cobblerock,
+/area/indoors/inq)
 "hdx" = (
 /obj/effect/decal/cobbleedge{
 	dir = 8;
@@ -22219,8 +22220,12 @@
 /turf/open/floor/ruinedwood/chevron,
 /area/indoors/town/rmh/farm)
 "kNj" = (
-/obj/machinery/light/fueled/firebowl/standing/blue,
-/turf/open/floor/churchrough,
+/obj/structure/rack/shelf/biggest,
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/needle,
+/obj/item/natural/bundle/cloth/full,
+/turf/open/floor/tile/masonic/inverted,
 /area/indoors/inq)
 "kNt" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -24576,6 +24581,16 @@
 /obj/machinery/light/fueled/wallfire/candle/l,
 /turf/open/floor/blocks/stonered/tiny,
 /area/indoors/town/apothecary)
+"lVo" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/structure/fake_machine/mail/l{
+	mailtag = "Inquisition"
+	},
+/turf/open/floor/churchrough,
+/area/indoors/inq)
 "lVq" = (
 /turf/open/floor/churchmarble,
 /area/under/cave/mazedungeon{
@@ -26450,6 +26465,10 @@
 	},
 /turf/open/floor/dirt/snowy,
 /area/outdoors/rmh_field/druid)
+"mMN" = (
+/obj/structure/fermentation_keg/random/water,
+/turf/open/floor/tile,
+/area/indoors/inq)
 "mNb" = (
 /obj/effect/decal/cobbleedge/alt{
 	dir = 10;
@@ -26636,6 +26655,15 @@
 /obj/item/natural/bundle/stoneblock,
 /turf/open/floor/cobblerock/snow,
 /area/outdoors/rmh_field/north)
+"mRA" = (
+/obj/structure/fluff/walldeco/church/line{
+	dir = 8
+	},
+/obj/structure/closet/crate/crafted_closet,
+/obj/item/broom,
+/obj/item/natural/bundle/cloth/full,
+/turf/open/floor/churchrough,
+/area/indoors/inq)
 "mRC" = (
 /obj/effect/landmark/start/monk,
 /turf/open/floor/cobble,
@@ -32784,9 +32812,7 @@
 	name = "Caves & Mines"
 	})
 "pOq" = (
-/obj/structure/fake_machine/mail/l{
-	mailtag = "Inquisition"
-	},
+/obj/item/bin/water,
 /turf/open/floor/churchrough,
 /area/indoors/inq)
 "pOv" = (
@@ -45325,6 +45351,16 @@
 	},
 /turf/open/floor/cobble,
 /area/indoors/cave/rmh_cave/greenskins)
+"vGG" = (
+/obj/effect/decal/cobbleedge/alt{
+	dir = 6
+	},
+/obj/machinery/light/fueled/wallfire/candle/blue,
+/obj/effect/decal/cobbleedge/alt{
+	dir = 5
+	},
+/turf/open/floor/cobblerock,
+/area/indoors/town/church)
 "vGJ" = (
 /obj/structure/table/wood/large/corner_new{
 	dir = 10
@@ -47168,9 +47204,17 @@
 /turf/open/floor/cobble/alt,
 /area/under/cavewet)
 "wAE" = (
-/obj/machinery/light/fueled/wallfire/candle/blue,
-/turf/open/floor/cobble/alt,
-/area/indoors/town/church)
+/obj/structure/rack/shelf/biggest,
+/obj/item/inqarticles/garrote,
+/obj/item/inqarticles/garrote,
+/obj/item/clothing/head/inqarticles/blackbag,
+/obj/item/clothing/head/inqarticles/blackbag,
+/obj/machinery/light/fueled/wallfire/candle/blue{
+	pixel_y = -32;
+	pixel_x = -32
+	},
+/turf/open/floor/tile/masonic/inverted,
+/area/indoors/inq)
 "wAP" = (
 /obj/structure/fluff/statue{
 	color = "#5c53ad"
@@ -158799,8 +158843,8 @@ pUK
 pUK
 pUK
 apD
-nhg
-wAE
+xtE
+tJb
 tJb
 tJb
 tJb
@@ -159047,7 +159091,7 @@ snm
 qoO
 chZ
 oTE
-oTE
+wAE
 kNj
 qoO
 qdN
@@ -159056,8 +159100,8 @@ pUK
 uqy
 pUK
 apD
-xtE
-msN
+nhg
+vGG
 ylR
 tJb
 msN
@@ -159569,7 +159613,7 @@ rWu
 qSM
 qSM
 qSM
-oTE
+pOq
 qdN
 eEj
 eEj
@@ -161109,7 +161153,7 @@ oTE
 oTE
 qoO
 qaR
-bBA
+lVo
 mKr
 oTE
 oTE
@@ -162133,7 +162177,7 @@ qoO
 qoO
 qoO
 qoO
-qoO
+mMN
 qoO
 qoO
 eHd
@@ -162390,7 +162434,7 @@ snm
 snm
 snm
 snm
-hdj
+qoO
 snm
 qoO
 pUK
@@ -162650,7 +162694,7 @@ snm
 snm
 snm
 qoO
-qSM
+mRA
 qSM
 uvi
 oTE
@@ -163688,7 +163732,7 @@ xSQ
 eLU
 aAn
 eLU
-eLU
+hdj
 pkd
 rgZ
 rgZ
@@ -163941,7 +163985,7 @@ sQu
 qOB
 pkd
 pkd
-eLU
+hdj
 jKS
 eLU
 xSQ
