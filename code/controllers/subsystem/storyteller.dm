@@ -138,6 +138,25 @@ SUBSYSTEM_DEF(gamemode)
 	/// Events that we have scheduled to run in the nearby future
 	var/list/scheduled_events = list()
 
+	/// Fixed-interval disasters to keep rounds moving.
+	var/next_disaster_time = 0
+	var/disaster_warning_sent = FALSE
+	var/datum/round_event_control/next_disaster_event
+	var/disaster_interval = 30 MINUTES
+	var/disaster_warning_lead = 10 MINUTES
+	var/list/disaster_event_weights = list(
+		/datum/round_event_control/gobinvade = 3,
+		/datum/round_event_control/lightsout = 3,
+		/datum/round_event_control/town_fire = 2,
+		/datum/round_event_control/hostile_animal_migration = 2,
+		/datum/round_event_control/collapsing_earth = 1,
+		/datum/round_event_control/haunts = 1,
+		/datum/round_event_control/disaster_stink = 2,
+		/datum/round_event_control/disaster_arousal = 2,
+		/datum/round_event_control/disaster_thirst = 2,
+		/datum/round_event_control/disaster_meteorstorm = 1,
+	)
+
 	/// Associative list of tracks to forced event controls. For admins to force events (though they can still invoke them freely outside of the track system)
 	var/list/forced_next_events = list()
 
@@ -511,6 +530,8 @@ SUBSYSTEM_DEF(gamemode)
 			sch_event.alerted_admins = TRUE
 			message_admins("Scheduled Event: [sch_event.event] will run in [(sch_event.start_time - world.time) / 10] seconds. (<a href='byond://?src=[REF(sch_event)];action=cancel'>CANCEL</a>) (<a href='byond://?src=[REF(sch_event)];action=refund'>REFUND</a>)")
 
+	handle_disaster_cycle()
+
 	if(!halted_storyteller && next_storyteller_process <= world.time && current_storyteller)
 		// We update crew information here to adjust population scalling and event thresholds for the storyteller.
 		update_crew_infos()
@@ -724,6 +745,103 @@ SUBSYSTEM_DEF(gamemode)
 	else //Only roundstart events can be scheduled before round start
 		message_admins("Event: [passed_event] has been scheduled to run on roundstart. (<a href='byond://?src=[REF(scheduled)];action=cancel'>CANCEL</a>)")
 	scheduled_events += scheduled
+
+/datum/controller/subsystem/gamemode/proc/handle_disaster_cycle()
+	if(!SSticker.HasRoundStarted())
+		return
+	if(!next_disaster_time)
+		next_disaster_time = SSticker.round_start_time + disaster_interval
+		disaster_warning_sent = FALSE
+		next_disaster_event = null
+
+	if(!next_disaster_event)
+		next_disaster_event = pick_disaster_event_control()
+
+	if(!disaster_warning_sent && world.time >= next_disaster_time - disaster_warning_lead)
+		warn_absolver_of_disaster(next_disaster_event)
+		disaster_warning_sent = TRUE
+
+	if(world.time < next_disaster_time)
+		return
+
+	var/datum/round_event_control/disaster_event = next_disaster_event || pick_disaster_event_control()
+	if(disaster_event)
+		priority_announce("Zizo curses us.", "Bad Omen", 'sound/misc/gods/zizo_omen.ogg')
+		run_disaster_event(disaster_event)
+
+	next_disaster_time += disaster_interval
+	disaster_warning_sent = FALSE
+	next_disaster_event = null
+
+/datum/controller/subsystem/gamemode/proc/run_disaster_event(datum/round_event_control/event_control)
+	if(!event_control)
+		return
+	var/old_min_players = event_control.min_players
+	event_control.min_players = 0
+	event_control.runEvent(random = FALSE, admin_forced = TRUE)
+	event_control.min_players = old_min_players
+
+/datum/controller/subsystem/gamemode/proc/warn_absolver_of_disaster(datum/round_event_control/event_control)
+	var/message = get_disaster_warning_message(event_control)
+	for(var/mob/living/carbon/human/player_mob as anything in GLOB.player_list)
+		if(!player_mob.client || player_mob.stat == DEAD || player_mob.client.is_afk())
+			continue
+		var/datum/job/assigned = player_mob.mind?.assigned_role
+		if(assigned && assigned.title == "Absolver")
+			to_chat(player_mob, span_warning(message))
+
+/datum/controller/subsystem/gamemode/proc/get_disaster_warning_message(datum/round_event_control/event_control)
+	if(!event_control)
+		return "A chill runs through your blood. Zizo's curse will strike in about ten minutes."
+	switch(event_control.type)
+		if(/datum/round_event_control/gobinvade)
+			return "Your censer sputters. You see crude gates yawning open; goblins will pour in within ten minutes."
+		if(/datum/round_event_control/lightsout)
+			return "Your censer dims to a sickly glow. Darkness will fall across the town within ten minutes."
+		if(/datum/round_event_control/town_fire)
+			return "You taste smoke on a still wind. Fire will gnaw at the town within ten minutes."
+		if(/datum/round_event_control/hostile_animal_migration)
+			return "In your prayer you hear howls and hoofbeats. A savage migration will reach the town within ten minutes."
+		if(/datum/round_event_control/collapsing_earth)
+			return "The ground groans in your bones. The earth will buckle within ten minutes."
+		if(/datum/round_event_control/haunts)
+			return "Cold whispers coil through your prayer. The streets will be haunted within ten minutes."
+		if(/datum/round_event_control/disaster_stink)
+			return "A rancid miasma coils in your lungs. Zizo will foul every soul with stench within ten minutes."
+		if(/datum/round_event_control/disaster_arousal)
+			return "A feverish warmth creeps through your veins. A wave of lust will sweep the town within ten minutes."
+		if(/datum/round_event_control/disaster_thirst)
+			return "Your mouth goes dry in prayer. A curse of thirst will grip the town within ten minutes."
+		if(/datum/round_event_control/disaster_meteorstorm)
+			return "Ash stings your lungs as fire gathers overhead. Meteors will fall upon the town within ten minutes."
+	return "A chill runs through your blood. Zizo's curse will strike in about ten minutes."
+
+/datum/controller/subsystem/gamemode/proc/pick_disaster_event_control()
+	var/list/candidates = list()
+	for(var/typepath as anything in disaster_event_weights)
+		if(!disaster_event_viable(typepath))
+			continue
+		var/datum/round_event_control/event_control = locate(typepath) in control
+		if(!event_control)
+			continue
+		candidates[event_control] = disaster_event_weights[typepath]
+	if(!length(candidates))
+		return null
+	return pickweight(candidates)
+
+/datum/controller/subsystem/gamemode/proc/disaster_event_viable(typepath)
+	switch(typepath)
+		if(/datum/round_event_control/gobinvade, /datum/round_event_control/haunts)
+			return LAZYLEN(GLOB.hauntstart)
+		if(/datum/round_event_control/collapsing_earth)
+			return (LAZYLEN(GLOB.mined_resource_loc) >= 12)
+		if(/datum/round_event_control/hostile_animal_migration)
+			return (LAZYLEN(GLOB.animal_migration_points) && LAZYLEN(GLOB.traveltiles))
+		if(/datum/round_event_control/disaster_meteorstorm)
+			for(var/area/indoors/town/A in GLOB.areas)
+				return TRUE
+			return FALSE
+	return TRUE
 
 /datum/controller/subsystem/gamemode/proc/update_crew_infos()
 	// Very similar logic to `get_active_player_count()`

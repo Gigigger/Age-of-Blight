@@ -2668,6 +2668,7 @@
 #include "code\modules\events\omens\goblininvasion.dm"
 #include "code\modules\events\omens\haunts.dm"
 #include "code\modules\events\omens\lightsout.dm"
+#include "code\modules\events\omens\disaster_misc.dm"
 #include "code\modules\events\omens\skellyinvade.dm"
 #include "code\modules\events\omens\skellysiege.dm"
 #include "code\modules\events\omens\vines.dm"
