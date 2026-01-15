@@ -322,6 +322,8 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 
 /datum/reagent/berrypoison/on_mob_life(mob/living/carbon/M)
 	if(volume > 0.09)
+		if(HAS_TRAIT(M, TRAIT_NASTY_EATER)) //Fixes the Quirk bit so it actually stops you from not getting poisoned as the Quirk says
+			return ..()
 		if(HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
 			M.add_nausea(1)
 			M.adjustToxLoss(0.5)
@@ -442,7 +444,7 @@ If you want to expand on poisons theres tons of fun effects TG chemistry has tha
 	metabolization_rate = REAGENTS_SLOW_METABOLISM
 
 /datum/reagent/killersice/on_mob_life(mob/living/carbon/M)
-	if(!HAS_TRAIT(M, TRAIT_NASTY_EATER) && !HAS_TRAIT(M, TRAIT_ORGAN_EATER))
+	if(!HAS_TRAIT(M, TRAIT_POISON_RESILIENCE))
 		M.adjustToxLoss(5)
 	return ..()
 
