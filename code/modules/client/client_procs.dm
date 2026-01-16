@@ -737,6 +737,8 @@ GLOBAL_LIST_EMPTY(respawncounts)
 	return ..()
 
 /client/Destroy()
+	if(mob)
+		mob.set_afk_indicator(TRUE)
 	STOP_PROCESSING(SSmousecharge, src)
 	if(holder)
 		for(var/I in GLOB.clients)

@@ -32,7 +32,7 @@
 
 /mob/proc/set_afk_indicator(state)
 	if(!afk_indicator)
-		afk_indicator = mutable_appearance('icons/mob/screen_alert.dmi', "sleeping", FLY_LAYER)
+		afk_indicator = mutable_appearance('icons/mob/ssd_indicator.dmi', "default0", FLY_LAYER)
 		afk_indicator.alpha = 200
 		afk_indicator.pixel_y = 16
 
