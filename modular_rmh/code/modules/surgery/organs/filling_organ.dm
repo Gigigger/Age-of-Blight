@@ -49,23 +49,33 @@
 
 	..()
 
+	//get stored items
+	var/list/stored_items = list()
+	SEND_SIGNAL(H, COMSIG_HOLE_RETURN_ITEM_LIST_SINGLE, stored_items, slot)
+	//get arousal data
 	var/list/arousal_data = list()
 	SEND_SIGNAL(H, COMSIG_SEX_GET_AROUSAL, arousal_data)
 	//updates size caps
-	if(!isanimal(H) && H.mind && organ_sizeable)
-		var/captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
-		if(damage)
-			captarget -= damage
-		if(contents.len)
-			for(var/obj/item/thing as anything in contents)
+	var/captarget
+	if(!isanimal(H))
+		if(H.mind && organ_sizeable)
+			captarget = storage_per_size + (storage_per_size * organ_size) // Updates the max_reagents in case the organ size changes
+		else if(H.mind) //like vaginas, non sizeable organs
+			captarget = max_reagents
+		if(fertility && pregnant) //preg size reduce
+			captarget *= 0.5
+		if(length(stored_items))
+			for(var/obj/item/thing as anything in stored_items)
 				if(thing.type != /obj/item/dildo/plug) //plugs wont take space as they are especially for this.
-					captarget -= thing.w_class*10
+					captarget -= thing.w_class*10 //anything else reduce space inside
+		if(damage)
+			captarget = max(0, captarget-damage*10)
+		captarget = max(0, captarget)
 		if(captarget != reagents.maximum_volume)
-			if(fertility && pregnant)
-				captarget *= 0.5
 			reagents.maximum_volume = captarget
-			if(H.has_quirk(/datum/quirk/selfawaregeni))
-				to_chat(H, span_blue("My [pick(altnames)] may be able to hold a different amount now."))
+			if(H.has_quirk(/datum/quirk/selfawaregeni) && world.time > last_size_alert + 12 SECONDS)
+				last_size_alert = world.time
+				to_chat(H, span_blue("My [pick(altnames)] hold a different amount now."))
 
 	//debuff checks
 	if(bloatable) //its bloatable.
@@ -125,7 +135,7 @@
 		return
 	if(reagents.total_volume && absorbing) //slowly inject to your blood if they have reagents. Will not work if refilling because i cant properly seperate the reagents for which to keep which to dump.
 		reagents.trans_to(owner, absorbrate, absorbmult, TRUE, FALSE)
-	if(!contents.len) //if nothing is plugging the hole, stuff will drip out.
+	if(!length(stored_items)) //if nothing is plugging the hole, stuff will drip out.
 		var/tempdriprate = driprate
 		if((reagents.total_volume && spiller) || (reagents.total_volume > reagents.maximum_volume)) //spiller or above it's capacity to leak.
 			var/obj/item/blockingitem = H.get_item_by_slot(blocker)
