@@ -270,7 +270,10 @@ GLOBAL_LIST_EMPTY(collar_masters)
 		stop_forced_arousal(pet)
 		return
 	var/end_time = forced_arousal_end_times[pet]
-	if(!end_time || world.time >= end_time)
+	if(!end_time)
+		stop_forced_arousal(pet)
+		return
+	if(world.time >= end_time)
 		stop_forced_arousal(pet)
 		to_chat(pet, span_notice("The collar's teasing hum dies down, letting your arousal ebb."))
 		if(mindparent?.current)
@@ -279,14 +282,19 @@ GLOBAL_LIST_EMPTY(collar_masters)
 	SEND_SIGNAL(pet, COMSIG_SEX_ADJUST_AROUSAL, 2)
 
 /datum/component/collar_master/proc/stop_forced_arousal(mob/living/carbon/human/pet)
-	if(!forced_arousal_timers[pet])
-		forced_arousal_end_times -= pet
-		return
 	var/id = forced_arousal_timers[pet]
 	forced_arousal_timers -= pet
 	forced_arousal_end_times -= pet
 	if(id)
 		deltimer(id)
+	var/list/timers = active_timers
+	if(timers)
+		for(var/datum/timedevent/timer as anything in timers)
+			var/datum/callback/callback = timer.callBack
+			if(!callback || callback.delegate != PROC_REF(ramp_arousal_tick))
+				continue
+			if(length(callback.arguments) && callback.arguments[1] == pet)
+				deltimer(timer)
 	return TRUE
 
 /datum/component/collar_master/proc/cleanup_pet(mob/living/carbon/human/pet)
