@@ -280,7 +280,7 @@
 	keys = list(/obj/item/key/artificer, /obj/item/key/blacksmith, /obj/item/key/miner)
 
 /obj/item/storage/keyring/veteran
-	keys = list(/obj/item/key/veteran, /obj/item/key/dungeon, /obj/item/key/garrison, /obj/item/key/atarms, /obj/item/key/walls, /obj/item/key/elder, /obj/item/key/butcher, /obj/item/key/soilson, /obj/item/key/manor)
+	keys = list(/obj/item/key/captain, /obj/item/key/veteran, /obj/item/key/dungeon, /obj/item/key/garrison, /obj/item/key/atarms, /obj/item/key/walls, /obj/item/key/elder, /obj/item/key/soilson, /obj/item/key/manor)
 
 /obj/item/storage/keyring/stevedore
 	keys = list(/obj/item/key/warehouse, /obj/item/key/merchant)
