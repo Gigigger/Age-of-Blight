@@ -390,7 +390,7 @@ GLOBAL_LIST_INIT(ritualslist, build_zizo_rituals())
 
 /datum/ritual/transmutation/summonweapon
 	name = "Summon Weapons"
-	center_requirement = /obj/item/weapon/lordscepter
+	center_requirement = /obj/item/ingot/steel
 
 	is_cultist_ritual = TRUE
 
