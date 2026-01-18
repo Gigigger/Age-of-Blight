@@ -4,16 +4,17 @@
 	You wouldn't call yourself a hero-- \
 	those belong to the men left rotting in the fields where you honed your ancient trade. \
 	Tired of senseless killing for men with crowns, you traded stability for a life of adventure. You returned a hero and savior of the lands, but those glory days with your old adventurer party are long gone. \
-	The honor has faded, your weary body aches, and your weapons gather dust. Sometimes you wonder how your old friends are doing."
+	The honor has faded, your weary body aches, and your weapons gather dust. Sometimes you wonder how your old friends are doing. \
+	But for now, you will be lead the Garrison of this town to keep order and law within it, and hopefully teach them a proper thing or two."
 	department_flag = GARRISON
 	display_order = JDO_VET
 	job_flags = (JOB_ANNOUNCE_ARRIVAL | JOB_SHOW_IN_CREDITS | JOB_EQUIP_RANK | JOB_NEW_PLAYER_JOINABLE)
 	faction = FACTION_TOWN
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	spells = list(/datum/action/cooldown/spell/undirected/list_target/convert_role/militia)
 	allowed_sexes = list(MALE, FEMALE)
-	allowed_ages = list(AGE_OLD, AGE_IMMORTAL)
+	allowed_ages = list(AGE_MIDDLEAGED ,AGE_OLD, AGE_IMMORTAL)
 	allowed_races = RACES_PLAYER_NONDISCRIMINATED
 	blacklisted_species = list(SPEC_ID_HALFLING)
 	cmode_music = "sound/music/cmode/towner/CombatVeteran.ogg"
@@ -29,6 +30,8 @@
 	)
 
 	traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_KNOWBANDITS,
 		TRAIT_OLDPARTY
 	)
 

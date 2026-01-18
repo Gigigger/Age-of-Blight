@@ -15,9 +15,9 @@
 	allowed_races = RACES_PLAYER_ALL
 
 	outfit = /datum/outfit/monk
-	give_bank_account = TRUE
+	give_bank_account = 80
 	job_bitflag = BITFLAG_CHURCH
-
+	allowed_patrons = ALL_TEMPLE_PATRONS
 	exp_types_granted = list(EXP_TYPE_CHURCH, EXP_TYPE_CLERIC)
 
 	jobstats = list(

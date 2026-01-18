@@ -63,19 +63,22 @@ GLOBAL_LIST_EMPTY(townmaster_titles)
 		SSfamilytree.AddRoyal(H, FAMILY_MOTHER)
 	to_chat(world, "<b>[span_notice(span_big("[H.real_name] is [ruler_title] of [SSmapping.config.map_name]."))]</b>")
 	to_chat(world, "<br>")
-	if(GLOB.keep_doors.len > 0)
-		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(know_keep_door_password), H), 7 SECONDS)
 
 /datum/outfit/townmaster/map_override(mob/living/carbon/human/H)
-	if(SSmapping.config.map_name != "Voyage")
-		return
-	head = /obj/item/clothing/head/helmet/leather/tricorn
-	cloak = /obj/item/clothing/cloak/half
-	l_hand = null
-	armor = /obj/item/clothing/armor/leather/jacket/silk_coat
-	shirt = /obj/item/clothing/shirt/undershirt/puritan
-	wrists = null
-	shoes = /obj/item/clothing/shoes/boots
+	if(SSmapping.config.map_name == "Voyage")
+
+		head = /obj/item/clothing/head/helmet/leather/tricorn
+		cloak = /obj/item/clothing/cloak/half
+		l_hand = null
+		armor = /obj/item/clothing/armor/leather/jacket/silk_coat
+		shirt = /obj/item/clothing/shirt/undershirt/puritan
+		wrists = null
+		shoes = /obj/item/clothing/shoes/boots
+
+	if(SSmapping.config.map_name == "Rivermist Hollow")
+
+		head = null
+		ring = /obj/item/clothing/ring/active/nomag/master
 
 /datum/outfit/townmaster/pre_equip(mob/living/carbon/human/H)
 	..()
@@ -138,7 +141,6 @@ GLOBAL_LIST_EMPTY(townmaster_titles)
 	ADD_TRAIT(H, TRAIT_NOSEGRAB, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-	ADD_TRAIT(H, TRAIT_KNOWKEEPPLANS, TRAIT_GENERIC)
 
 /datum/job/roguetown/village/extownmaster //just used to change the lords title
 	title = "Ex-Town Master"

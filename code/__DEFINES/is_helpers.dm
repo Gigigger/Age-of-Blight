@@ -176,6 +176,7 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 	#define is_unassigned_job(job_type) (istype(job_type, /datum/job/unassigned))
 // Nobility
 	#define is_lord_job(job_type) (istype(job_type, /datum/job/lord))
+	#define is_town_master_job(job_type) (istype(job_type, /datum/job/roguetown/village/townmaster))
 	#define is_consort_job(job_type) (istype(job_type, /datum/job/consort))
 	#define is_merchant_job(job_type) (istype(job_type, /datum/job/merchant))
 	#define is_steward_job(job_type) (istype(job_type, /datum/job/steward))
@@ -187,6 +188,7 @@ GLOBAL_LIST_INIT(RATS_DONT_EAT, typecacheof(list(
 	#define is_adept_job(job_type) (istype(job_type, /datum/job/adept))
 // Serfs
 	#define is_gaffer_job(job_type) (istype(job_type, /datum/job/gaffer))
+	#define is_apothecary_job(job_type) (istype(job_type, /datum/job/apothecary))
 // Peasantry
 	#define is_jester_job(job_type) (istype(job_type, /datum/job/jester))
 	#define is_adventurer_job(job_type) (istype(job_type, /datum/job/advclass/adventurer))

@@ -191,6 +191,31 @@
 	if(magcom)
 		magcom.RemoveComponent()
 
+
+//Rivermist Hollow only ring, makes it so it works as a substitute to the Crown for the Throat in that specific map
+/obj/item/clothing/ring/active/nomag/master
+	name = "Town Master's Ring"
+	sellprice = 500 //Make it a really great incentive to steal the Town Master's ring
+	desc = "A ring forged within the bowels of Mt. Decapitation, foretold to contain the tomb of the eldest of Zizo's Necrarchs. Bestowed with enchanted protections against any arcyne rivals. A ring fit for a Lord of Arcyne"
+	cdtime = 5 MINUTES
+	activetime = 60 SECONDS
+
+/obj/item/clothing/ring/active/nomag/master/Initialize()
+	. = ..()
+	if(type == /obj/item/clothing/ring/active/nomag/master && !istype(loc, /mob/living/carbon/human/dummy)) //dummies spawn this in character setup
+		SSroguemachine.crown = src
+
+/obj/item/clothing/ring/active/nomag/master/Destroy()
+	if(SSroguemachine.crown == src)
+		SSroguemachine.crown = null
+	return ..()
+
+/obj/item/clothing/ring/active/nomag/master/proc/anti_stall()
+	visible_message(span_warning("[src] crumbles to dust, the ashes spiriting away in the direction of the Manor."))
+	qdel(src) //Anti-stall
+
+
+
 // ................... Ring of Protection ....................... (rare treasure, not for purchase)
 /obj/item/clothing/ring/gold/protection
 	name = "ring of protection"
@@ -452,4 +477,23 @@
 /obj/item/clothing/ring/feldsher_ring
 	name = "feldsher's ring"
 	icon_state = "ring_feldsher"
-	desc = "A hallowed copper ring, ritualistically forged by Pestran clergymen upon the graduation of a feldsher. \n It bears a vulture skull, whose beak is crooked, and the copper was blessed with Pestra's rot: it will corrode in time, yet never lose its resilience. \n Although the wearer may not have Pestra as his patron, this ring is proof of His blessing. This allows the feldsher to extract and manipulate Lux, so long as they follow His teachings"
+	desc = "A hallowed copper ring, ritualistically forged by Pestran clergymen upon the graduation of a feldsher. \
+	\n This ring is proof of Pestra's blessing, in turn allowing the feldsher to extract and manipulate Lux so long as they follow Her teachings"
+
+// ................... The Apothecary's ring .......................
+
+/obj/item/clothing/ring/apothecary_ring
+	name = "apothecary's ring"
+	icon_state = "ring_apothecary"
+	desc = "" // the description is handled upon examine.
+
+
+/obj/item/clothing/ring/apothecary_ring/examine(mob/user)
+	. = ..()
+	if(is_apothecary_job(user.mind.assigned_role))
+		. += span_info("A hefty bloody made out of thaumic iron, proof of my successful graduation. \
+		It doesn't get any easier to wear with time, but at least it proves I'm a confirmed alchemist \
+		and can legally manipulate lux, so long as I follow Pestra's teachings.")
+	else
+		. += "An uncomfortably heavy ring of thaumic iron. Specifically made for apothecaries upon graduation. \n \
+		This gives them the right to both extract and manipulate lux, so long as they follow Pestra's teachings."
