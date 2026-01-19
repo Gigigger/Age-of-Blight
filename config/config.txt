@@ -16,16 +16,16 @@ $include plexora.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'tgstation' with the name of your choice.
-SERVERNAME Bad End Theater (18+)
+SERVERNAME [RU] Age of Blight (18+)
 
 ## Server subtitle: This appears right after the server name in the BYOND hub.
-SERVERSUBTITLE Every story ends badly. Enjoy the show.
+SERVERSUBTITLE Grimdark Fantasy based on Bad End Theatre code
 
 ## Hosted By: Shows below
-HOSTEDBY https://discord.gg/wxENv6xqsw
+HOSTEDBY Vanaim (https://discord.gg/QDkDeB3UmY)
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME tgstation
+SERVERSQLNAME AoB
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Vanderlin
@@ -228,7 +228,7 @@ GUEST_BAN
 #WEBCLIENT_ONLY_BYOND_MEMBERS
 
 ## Set to prevent anyone but those ckeys listed in config/whitelist.txt and config/admins.txt from joining your server
-#USEWHITELIST
+USEWHITELIST
 
 USEBLACKLIST
 
