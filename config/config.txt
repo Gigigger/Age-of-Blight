@@ -19,10 +19,10 @@ $include plexora.txt
 SERVERNAME [RU] Age of Blight (18+)
 
 ## Server subtitle: This appears right after the server name in the BYOND hub.
-SERVERSUBTITLE Grimdark Fantasy based on Bad End Theatre code
+SERVERSUBTITLE Grimdark Fantasy based on The Bad End Theatre code
 
 ## Hosted By: Shows below
-HOSTEDBY Vanaim (https://discord.gg/QDkDeB3UmY)
+HOSTEDBY Vanaim (https://discord.gg/AEVsMdc9am)
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
 SERVERSQLNAME AoB
