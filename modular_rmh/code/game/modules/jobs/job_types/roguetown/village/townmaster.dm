@@ -31,13 +31,13 @@ GLOBAL_LIST_EMPTY(townmaster_titles)
 
 	job_bitflag = BITFLAG_ROYALTY
 
-	exp_type = list(EXP_TYPE_NOBLE, EXP_TYPE_LIVING, EXP_TYPE_LEADERSHIP)
+	//exp_type = list(EXP_TYPE_NOBLE, EXP_TYPE_LIVING, EXP_TYPE_LEADERSHIP)
 	exp_types_granted = list(EXP_TYPE_NOBLE, EXP_TYPE_LEADERSHIP)
-	exp_requirements = list(
-		EXP_TYPE_LIVING = 1200,
-		EXP_TYPE_NOBLE = 900,
-		EXP_TYPE_LEADERSHIP = 300
-	)
+	//exp_requirements = list(
+	//	EXP_TYPE_LIVING = 1200,
+	//	EXP_TYPE_NOBLE = 900,
+	//	EXP_TYPE_LEADERSHIP = 300
+	//)
 
 
 /datum/job/roguetown/village/townmaster/get_informed_title(mob/mob, change_title = FALSE, new_title)

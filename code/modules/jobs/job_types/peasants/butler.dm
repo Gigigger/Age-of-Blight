@@ -21,10 +21,10 @@
 	give_bank_account = 30
 	cmode_music = 'sound/music/cmode/towner/CombatInn.ogg'
 
-	exp_type = list(EXP_TYPE_LIVING)
-	exp_requirements = list(
-		EXP_TYPE_LIVING = 600
-	)
+	//exp_type = list(EXP_TYPE_LIVING)
+	//exp_requirements = list(
+	//	EXP_TYPE_LIVING = 600
+	//)
 
 	jobstats = list(
 		STATKEY_STR = 2,

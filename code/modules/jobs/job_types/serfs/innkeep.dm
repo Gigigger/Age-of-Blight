@@ -38,11 +38,10 @@
 		TRAIT_BOOZE_SLIDER
 	)
 
-	exp_type = list(EXP_TYPE_LIVING)
-
-	exp_requirements = list(
-		EXP_TYPE_LIVING = 300
-	)
+	//exp_type = list(EXP_TYPE_LIVING)
+	//exp_requirements = list(
+	//	EXP_TYPE_LIVING = 300
+	//)
 
 /datum/outfit/innkeep
 	name = "Innkeep"
