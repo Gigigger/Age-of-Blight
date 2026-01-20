@@ -57,6 +57,7 @@
 			if(/datum/patron/divine/necra)
 				spawned.cmode_music = 'sound/music/cmode/church/CombatGravekeeper.ogg'
 				ADD_TRAIT(spawned, TRAIT_DEADNOSE, TRAIT_GENERIC)
+				ADD_TRAIT(spawned, TRAIT_GRAVEROBBER, TRAIT_GENERIC)
 			if(/datum/patron/divine/eora)
 				spawned.cmode_music = 'sound/music/cmode/church/CombatEora.ogg'
 				spawned.virginity = FALSE
@@ -95,7 +96,7 @@
 		"Great axe" = /obj/item/weapon/polearm/halberd/bardiche/woodcutter,
 	)
 
-	var/weaponchoice = spawned.select_equippable(spawned, selectableweapon, message = "Choose Your Specialisation", title = "Warrior of the ten!")
+	var/weaponchoice = spawned.select_equippable(player_client, selectableweapon, message = "Choose Your Specialisation", title = "Warrior of the ten!")
 	if(!weaponchoice)
 		return
 

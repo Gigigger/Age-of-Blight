@@ -135,7 +135,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		return
 	var/mob/living/L = user
 	if(!(accessor_trait && HAS_MIND_TRAIT(user, accessor_trait)))
-		var/bonuses = (HAS_TRAIT(user, TRAIT_THIEVESGUILD) || HAS_TRAIT(user, TRAIT_ASSASSIN)) ? 2 : 0
+		var/bonuses = (HAS_TRAIT(user, TRAIT_THIEVESGUILD) || HAS_TRAIT(user, TRAIT_ASSASSIN)) ? 2 : 1
 		if(L.STAPER + bonuses < hidden_dc)
 			return // nothing here!
 	L.changeNext_move(CLICK_CD_MELEE)
