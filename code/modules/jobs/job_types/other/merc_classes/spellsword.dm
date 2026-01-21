@@ -28,7 +28,7 @@
 		/datum/skill/misc/reading = 3,
 		/datum/skill/misc/medicine = 1,
 		/datum/skill/misc/sewing = 1,
-		/datum/skill/magic/arcane = 1,
+		/datum/skill/magic/arcane = 3,
 		/datum/skill/craft/alchemy = 1
 	)
 

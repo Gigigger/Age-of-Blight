@@ -47,7 +47,7 @@
 	difficulty = 3
 
 /datum/lock/key/purity
-	lockid_list = list(ACCESS_APOTHECARY)
+	lockid_list = list(ACCESS_APOTHECARY, ACCESS_CRIME, ACCESS_MATRON)
 	locked = TRUE
 	difficulty = 3
 

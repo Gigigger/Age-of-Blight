@@ -71,8 +71,8 @@
 	var/obj/item/clothing/gloves/gloves_to_wear = /obj/item/clothing/gloves/bandages/weighted
 	switch(weapon_choice)
 		if("Discipline - Unarmed")
-			equipped_human.clamped_adjust_skillrank(/datum/skill/combat/unarmed, 5, 5)
-			equipped_human.clamped_adjust_skillrank(/datum/skill/misc/athletics, 5, 5)
+			equipped_human.adjust_skillrank(/datum/skill/combat/unarmed, 1)
+			equipped_human.adjust_skillrank(/datum/skill/misc/athletics, 1)
 			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 1)
 			gloves_to_wear = /obj/item/clothing/gloves/bandages/pugilist
 			ADD_TRAIT(equipped_human, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
@@ -84,7 +84,7 @@
 			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 1)
 			ADD_TRAIT(equipped_human, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
 		if("Quarterstaff")
-			equipped_human.clamped_adjust_skillrank(/datum/skill/combat/polearms, 4, 4)
+			equipped_human.adjust_skillrank(/datum/skill/combat/polearms, 4)
 			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_PER, 1)
 			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_INT, 1)
 	equipped_human.equip_to_slot_or_del(new gloves_to_wear, ITEM_SLOT_GLOVES, TRUE)

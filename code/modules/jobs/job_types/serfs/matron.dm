@@ -66,6 +66,7 @@
 	)
 	traits = list(
 		TRAIT_THIEVESGUILD,
+		TRAIT_SEEPRICES, //Needed for fencing shit
 		TRAIT_ASSASSIN, //The local boss of the Thieves Guild would know the contracts
 		TRAIT_OLDPARTY,
 		TRAIT_DODGEEXPERT,
@@ -103,7 +104,8 @@
 
 	backpack_contents = list(
 		/obj/item/weapon/knife/dagger/steel/special = 1,
-		/obj/item/key/matron = 1
+		/obj/item/key/matron = 1,
+		/obj/item/key/crime = 1
 	)
 
 /datum/outfit/matron/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)

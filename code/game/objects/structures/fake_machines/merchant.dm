@@ -54,7 +54,7 @@
 
 /obj/item/fake_machine/merchant/proc/has_guild_merchant_in_view()
 	for(var/mob/living/nearby in oview(7, src))
-		if(HAS_MIND_TRAIT(nearby, TRAIT_MERCHANT_GUILD))
+		if(HAS_MIND_TRAIT(nearby, TRAIT_MERCHANT_GUILD) || HAS_TRAIT(nearby, TRAIT_THIEVESGUILD)) //added this so the Fencer and Thieves guild can sell their shit if need be, I think they would steal from the Merchant anyways
 			return TRUE
 	return FALSE
 

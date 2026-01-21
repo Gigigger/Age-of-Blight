@@ -1021,6 +1021,17 @@
 	},
 /turf/open/floor/carpet/red,
 /area/indoors/town/rmh/chapel/basement)
+"aAb" = (
+/obj/effect/decal/edge{
+	dir = 2;
+	color = "#3b3b3b"
+	},
+/obj/structure/fake_machine/drugmachine{
+	density = 0;
+	pixel_y = -32
+	},
+/turf/open/floor/hexstone,
+/area/under/town/rmh/basement)
 "aAc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/map_spawner/loot/dungeon/money,
@@ -1176,6 +1187,14 @@
 /obj/effect/decal/cleanable/debris/stone,
 /turf/open/floor/cobblerock/alt,
 /area/under/cavewet)
+"aFn" = (
+/obj/effect/decal/edge_corner{
+	dir = 2;
+	color = "#3b3b3b"
+	},
+/obj/effect/landmark/start/crime,
+/turf/open/floor/herringbone,
+/area/indoors/cave/underhamlet)
 "aFJ" = (
 /turf/open/floor/ruinedwood/chevron,
 /area/indoors/town/rmh/tavern)
@@ -1935,7 +1954,6 @@
 /area/under/cavewet)
 "aZe" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
-/obj/effect/landmark/start/crime,
 /turf/open/floor/blocks,
 /area/under/town/rmh/basement)
 "aZg" = (
@@ -2309,8 +2327,8 @@
 /area/under/town/basement)
 "bgV" = (
 /obj/effect/landmark/start/crime,
-/turf/open/floor/cobble/alt,
-/area/under/town/rmh/basement)
+/turf/open/floor/cobble,
+/area/indoors/cave/underhamlet)
 "bhI" = (
 /turf/open/floor/cobblerock,
 /area/under/town/rmh/basement)
@@ -13567,6 +13585,12 @@
 	},
 /turf/open/floor/wood,
 /area/indoors/town/rmh/town_hall)
+"guU" = (
+/obj/machinery/light/fueled/torchholder/l{
+	dir = 8
+	},
+/turf/open/floor/greenstone,
+/area/under/town/rmh/sewer)
 "guZ" = (
 /turf/closed/wall/mineral/decostone/cand,
 /area/indoors/town/rmh/library)
@@ -23870,9 +23894,13 @@
 /turf/open/floor/grass/cold,
 /area/outdoors/exposed/town/rmh/farm)
 "lpp" = (
-/obj/effect/landmark/start/gaffer_assistant,
-/turf/open/floor/cobble/alt,
-/area/under/town/rmh/basement)
+/obj/effect/decal/edge_corner{
+	dir = 8;
+	color = "#3b3b3b"
+	},
+/obj/effect/landmark/start/crime,
+/turf/open/floor/herringbone,
+/area/indoors/cave/underhamlet)
 "lpx" = (
 /obj/structure/fluff/railing/wood,
 /obj/effect/decal/cobbleedge{
@@ -24308,12 +24336,17 @@
 /turf/open/floor/blocks,
 /area/indoors/town/rmh/garrison)
 "lyB" = (
-/obj/effect/decal/cobbleedge/alt{
-	dir = 10
+/obj/effect/decal/edge{
+	dir = 8;
+	color = "#3b3b3b"
 	},
-/obj/effect/landmark/start/crime,
-/turf/open/floor/blocks,
-/area/under/town/rmh/basement)
+/obj/item/fake_machine/merchant{
+	pixel_y = 10;
+	name = "PILFERED SKY HANDLER";
+	desc = "A machine that attracts the attention of trading balloons \n\n This one has been pilfered by the Thieves Guild to suit their purposes."
+	},
+/turf/open/floor/metal/barograte/open,
+/area/indoors/cave/underhamlet)
 "lyL" = (
 /turf/open/floor/grass/cold,
 /area/outdoors/town/rmh)
@@ -27457,9 +27490,12 @@
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_air)
 "mWw" = (
-/obj/effect/landmark/start/crime,
-/turf/open/floor/blocks,
-/area/under/town/rmh/basement)
+/obj/structure/fake_machine/drugmachine{
+	density = 0;
+	pixel_y = -32
+	},
+/turf/open/floor/cobble,
+/area/indoors/cave/underhamlet)
 "mWz" = (
 /obj/structure/stairs/d,
 /turf/open/floor/ruinedwood,
@@ -28936,6 +28972,7 @@
 /obj/effect/decal/wood/herringbone2{
 	dir = 1
 	},
+/obj/item/key/crime,
 /turf/open/floor/ruinedwood/herringbone,
 /area/indoors/cave/underhamlet)
 "nJH" = (
@@ -37284,7 +37321,7 @@
 "rvz" = (
 /obj/structure/door/green,
 /obj/effect/mapping_helpers/access/locker,
-/obj/effect/mapping_helpers/access/keyset/town/matron,
+/obj/effect/mapping_helpers/access/keyset/town/crime,
 /turf/open/floor/concrete,
 /area/under/town/rmh/basement)
 "rvE" = (
@@ -38745,6 +38782,7 @@
 /area/indoors/town/rmh/tavern)
 "sdJ" = (
 /obj/structure/door/viewport/stone,
+/obj/effect/mapping_helpers/access/keyset/town/crime,
 /turf/open/floor/concrete,
 /area/indoors/cave/underhamlet)
 "sdQ" = (
@@ -40588,6 +40626,15 @@
 	},
 /turf/open/floor/tile/harem1,
 /area/indoors/town/rmh/town_hall)
+"sZw" = (
+/obj/item/clothing/head/peaceflower{
+	pixel_y = 16;
+	pixel_x = 9;
+	name = "blackflower bud";
+	desc = "A flower of black petals, associated with Mask. Usually adorned as a headress or laid at spots as a symbol of shadow or thieves."
+	},
+/turf/open/floor/greenstone,
+/area/under/town/rmh/sewer)
 "sZz" = (
 /turf/closed/mineral/bedrock/cold{
 	name = "solid rock"
@@ -44517,12 +44564,13 @@
 /turf/open/floor/ruinedwood/herringbone_clear,
 /area/indoors/town/merc_guild)
 "uKq" = (
-/obj/structure/fake_machine/drugmachine{
-	density = 0;
-	pixel_y = -32
+/obj/effect/decal/edge_corner{
+	dir = 4;
+	color = "#3b3b3b"
 	},
-/turf/open/floor/tile/bath,
-/area/indoors/town/rmh/bath)
+/obj/effect/landmark/start/crime,
+/turf/open/floor/herringbone,
+/area/indoors/cave/underhamlet)
 "uKs" = (
 /obj/structure/rack,
 /obj/item/weapon/polearm/woodstaff{
@@ -45958,6 +46006,7 @@
 /obj/effect/decal/wood/herringbone2{
 	dir = 4
 	},
+/obj/item/key/crime,
 /turf/open/floor/ruinedwood/herringbone,
 /area/indoors/cave/underhamlet)
 "vvf" = (
@@ -47405,10 +47454,12 @@
 /turf/open/floor/cobblerock/snow,
 /area/indoors/cave/rmh_cave/minotaur)
 "wgC" = (
-/obj/item/fake_machine/drugtrade{
-	pixel_y = 8
+/obj/effect/decal/edge_corner{
+	dir = 1;
+	color = "#3b3b3b"
 	},
-/turf/open/floor/metal/barograte/open,
+/obj/effect/landmark/start/crime,
+/turf/open/floor/herringbone,
 /area/indoors/cave/underhamlet)
 "wgD" = (
 /obj/structure/table/wood/large/corner_new{
@@ -51295,6 +51346,16 @@
 	},
 /turf/open/floor/dirt/road/snowy,
 /area/outdoors/town/rmh)
+"xUV" = (
+/obj/effect/decal/edge{
+	dir = 4;
+	color = "#3b3b3b"
+	},
+/obj/item/fake_machine/drugtrade{
+	pixel_y = 8
+	},
+/turf/open/floor/metal/barograte/open,
+/area/indoors/cave/underhamlet)
 "xVb" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
@@ -75837,9 +75898,9 @@ cvn
 gSo
 mGQ
 mGQ
+guU
 mGQ
-mGQ
-mGQ
+sZw
 mGQ
 mGQ
 mGQ
@@ -76095,14 +76156,14 @@ gSo
 jzy
 jzy
 jzy
-rjq
+rTc
 lWV
-rjq
+rTc
 jzy
 jzy
 jzy
 ylY
-rTc
+rjq
 ylY
 jzy
 jzy
@@ -82796,7 +82857,7 @@ rDW
 umm
 ros
 fof
-uKq
+vfo
 sDq
 vJf
 xgl
@@ -85668,7 +85729,7 @@ snm
 snm
 tgg
 cJa
-bgV
+cJa
 tpR
 aZe
 jFd
@@ -86693,9 +86754,9 @@ tgg
 tgg
 dgG
 wGX
-ryB
+aAb
 tgg
-mWw
+ogE
 epW
 cJa
 cJa
@@ -87209,7 +87270,7 @@ fTE
 wGX
 ryB
 tgg
-lyB
+tpR
 ogE
 epW
 wHo
@@ -87466,7 +87527,7 @@ xsJ
 dpB
 ryB
 tgg
-lpp
+cJa
 tpR
 ogE
 ogE
@@ -128009,7 +128070,7 @@ dvv
 uue
 uue
 sTZ
-ooX
+bgV
 ooX
 ooX
 txD
@@ -128259,7 +128320,7 @@ rgZ
 dvv
 ooX
 gpc
-ftf
+lyB
 pVn
 gDV
 weO
@@ -128516,7 +128577,7 @@ rgZ
 kiy
 ooX
 eSN
-wgC
+mtn
 gWa
 gez
 gwK
@@ -128773,16 +128834,16 @@ rgZ
 weO
 pJU
 tlh
-cHe
+xUV
 bUn
-ooX
+mWw
 weO
 uue
 keI
 inc
+bgV
 ooX
-ooX
-ooX
+bgV
 txD
 keI
 uue
@@ -130836,9 +130897,9 @@ roC
 dvv
 uue
 gDV
-gpc
+lpp
 ftf
-pVn
+aFn
 gDV
 uue
 weO
@@ -131350,9 +131411,9 @@ gDV
 weO
 uue
 gDV
-tlh
+wgC
 cHe
-bUn
+uKq
 gDV
 uue
 dvv
