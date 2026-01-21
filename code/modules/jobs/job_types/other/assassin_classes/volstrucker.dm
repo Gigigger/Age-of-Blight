@@ -50,7 +50,7 @@
 /datum/outfit/guilder/volstrucker
 	name = "Volstrucker"
 	head = /obj/item/clothing/head/faceless
-	face = /obj/item/clothing/face/shepherd/shadowmask
+	mask = /obj/item/clothing/face/shepherd/shadowmask
 	cloak = /obj/item/clothing/cloak/faceless
 	armor = /obj/item/clothing/armor/regenerating/skin/volstrucker
 	wrists = /obj/item/clothing/wrists/bracers/leather
