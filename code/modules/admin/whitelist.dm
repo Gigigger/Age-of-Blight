@@ -1,11 +1,6 @@
-#ifdef TESTSERVER
-	#define WHITELISTFILE	"[global.config.directory]/roguetown/wl_test.txt"
-#else
-	#define WHITELISTFILE	"[global.config.directory]/roguetown/wl_mat.txt"
-#endif
+#define WHITELISTFILE "[global.config.directory]/whitelist.txt"
 
-GLOBAL_LIST_EMPTY(whitelist)
-GLOBAL_PROTECT(whitelist)
+GLOBAL_LIST(whitelist)
 
 /proc/load_whitelist()
 	GLOB.whitelist = list()
@@ -15,42 +10,32 @@ GLOBAL_PROTECT(whitelist)
 		if(findtextEx(line,"#",1,2))
 			continue
 		GLOB.whitelist += ckey(line)
-/*
+
+	if(!GLOB.whitelist.len)
+		GLOB.whitelist = null
+
 /proc/check_whitelist(ckey)
-	if(!GLOB.whitelist || !GLOB.whitelist.len)
-		load_whitelist()
-#ifdef TESTSERVER
-	var/plevel = check_patreon_lvl(ckey)
-	var/tlevel = check_twitch_lvl(ckey)
-	if(plevel >= 3 || tlevel >= 1)
-		return TRUE
-#endif
-	return (ckey in GLOB.whitelist)*/
-
-// HSECTOR EDIT START
-/proc/check_whitelist(key)
-	if(!SSdbcore.Connect())
-		log_world("Failed to connect to database in check_whitelist(). Disabling whitelist for current round.")
-		log_game("Failed to connect to database in check_whitelist(). Disabling whitelist for current round.")
-		CONFIG_SET(flag/usewhitelist, FALSE)
-		return TRUE
-
-	var/datum/DBQuery/query_get_whitelist = SSdbcore.NewQuery({"
-		SELECT id FROM [format_table_name("whitelist")]
-		WHERE ckey = :ckey
-	"}, list("ckey" = key)
-	)
-
-	if(!query_get_whitelist.Execute())
-		log_sql("Whitelist check for ckey [key] failed to execute. Rejecting")
-		message_admins("Whitelist check for ckey [key] failed to execute. Rejecting")
-		qdel(query_get_whitelist)
+	if(!GLOB.whitelist)
 		return FALSE
+	. = (ckey in GLOB.whitelist)
 
-	var/allow = query_get_whitelist.NextRow()
+ADMIN_VERB(whitelist_player, R_BAN, "Whitelist CKey", "Adds a ckey to the Whitelist file.", ADMIN_CATEGORY_MAIN)
+	var/input_ckey = input("CKey to whitelist: (Adds CKey to the whitelist.txt)") as null|text
+	// The ckey proc "santizies" it to be its "true" form
+	var/canon_ckey = ckey(input_ckey)
+	if(!input_ckey || !canon_ckey)
+		return
+	// Dont add them to the whitelist if they are already in it
+	if(canon_ckey in GLOB.whitelist)
+		return
 
-	qdel(query_get_whitelist)
+	GLOB.whitelist += canon_ckey
+	rustg_file_append("\n[input_ckey]", WHITELISTFILE)
 
-	return allow
+	message_admins("[input_ckey] has been whitelisted by [key_name(user)]")
+	log_admin("[input_ckey] has been whitelisted by [key_name(user)]")
+
+ADMIN_VERB_CUSTOM_EXIST_CHECK(whitelist_player)
+	return CONFIG_GET(flag/usewhitelist)
 
 #undef WHITELISTFILE
