@@ -33,7 +33,8 @@
 	)
 
 	traits = list(
-		TRAIT_THIEVESGUILD //For obvious reasons
+		TRAIT_THIEVESGUILD, //For obvious reasons
+		TRAIT_ASSASSIN, //Makes sure everyone can know the contracts
 	)
 
 	mind_traits = list(

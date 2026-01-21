@@ -66,6 +66,7 @@
 	)
 	traits = list(
 		TRAIT_THIEVESGUILD,
+		TRAIT_ASSASSIN, //The local boss of the Thieves Guild would know the contracts
 		TRAIT_OLDPARTY,
 		TRAIT_DODGEEXPERT,
 		TRAIT_STRONG_GRABBER,
