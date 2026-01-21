@@ -81,6 +81,7 @@
 
 		spawned.adjust_stat_modifier(STATMOD_JOB, STATKEY_SPD, 1)
 		spawned.adjust_stat_modifier(STATMOD_JOB, STATKEY_END, 1)
+		spawned.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 2) //offssets Old's penalty
 
 /datum/outfit/matron
 	name = "Matron"

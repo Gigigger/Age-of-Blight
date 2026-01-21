@@ -164,6 +164,7 @@
 #define JDO_WRETCH 34.4
 
 #define JDO_MERCENARY 35
+#define JDO_CRIME 35.1 //For the Thieves' Guild members
 
 #define JDO_VAGRANT 36
 #define JDO_ORPHAN 37

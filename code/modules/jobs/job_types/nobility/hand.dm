@@ -145,8 +145,15 @@
 		/datum/skill/labor/mathematics = 3
 	)
 
+
+//Spymaster is now a member of the Thieves' Guild, even more reason not to fuck with them.
+	mind_traits = list(
+		TRAIT_KNOW_THIEF_DOORS
+	)
+
 	traits = list(
 		TRAIT_MEDIUMARMOR,
+		TRAIT_THIEVESGUILD,
 		TRAIT_DODGEEXPERT
 	)
 

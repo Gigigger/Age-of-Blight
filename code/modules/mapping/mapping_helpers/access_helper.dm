@@ -65,6 +65,9 @@
 /obj/effect/mapping_helpers/access/keyset/town/matron
 	accesses = list(ACCESS_MATRON)
 
+/obj/effect/mapping_helpers/access/keyset/town/crime
+	accesses = list(ACCESS_CRIME)
+
 /obj/effect/mapping_helpers/access/keyset/town/mercenary
 	accesses = list(ACCESS_MERC)
 

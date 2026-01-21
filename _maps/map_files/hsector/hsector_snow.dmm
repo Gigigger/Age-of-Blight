@@ -1935,6 +1935,7 @@
 /area/under/cavewet)
 "aZe" = (
 /obj/machinery/light/fueled/wallfire/candle/r,
+/obj/effect/landmark/start/crime,
 /turf/open/floor/blocks,
 /area/under/town/rmh/basement)
 "aZg" = (
@@ -2306,6 +2307,10 @@
 /obj/item/storage/sack,
 /turf/open/floor/cobble,
 /area/under/town/basement)
+"bgV" = (
+/obj/effect/landmark/start/crime,
+/turf/open/floor/cobble/alt,
+/area/under/town/rmh/basement)
 "bhI" = (
 /turf/open/floor/cobblerock,
 /area/under/town/rmh/basement)
@@ -24302,6 +24307,13 @@
 	},
 /turf/open/floor/blocks,
 /area/indoors/town/rmh/garrison)
+"lyB" = (
+/obj/effect/decal/cobbleedge/alt{
+	dir = 10
+	},
+/obj/effect/landmark/start/crime,
+/turf/open/floor/blocks,
+/area/under/town/rmh/basement)
 "lyL" = (
 /turf/open/floor/grass/cold,
 /area/outdoors/town/rmh)
@@ -26165,6 +26177,10 @@
 "mtn" = (
 /turf/open/floor/herringbone,
 /area/indoors/cave/underhamlet)
+"mtq" = (
+/obj/effect/landmark/start/crimelate,
+/turf/open/floor/dirt/road/snowy,
+/area/outdoors/rmh_field)
 "mtw" = (
 /obj/effect/decal/edge{
 	dir = 8;
@@ -27440,6 +27456,10 @@
 /obj/structure/chair/bench/church/smallbench,
 /turf/open/floor/grass/yel,
 /area/outdoors/rmh_air)
+"mWw" = (
+/obj/effect/landmark/start/crime,
+/turf/open/floor/blocks,
+/area/under/town/rmh/basement)
 "mWz" = (
 /obj/structure/stairs/d,
 /turf/open/floor/ruinedwood,
@@ -85648,7 +85668,7 @@ snm
 snm
 tgg
 cJa
-cJa
+bgV
 tpR
 aZe
 jFd
@@ -86675,7 +86695,7 @@ dgG
 wGX
 ryB
 tgg
-ogE
+mWw
 epW
 cJa
 cJa
@@ -87189,7 +87209,7 @@ fTE
 wGX
 ryB
 tgg
-tpR
+lyB
 ogE
 epW
 wHo
@@ -235720,7 +235740,7 @@ vRp
 vRp
 mwK
 ixH
-nIu
+mtq
 nIu
 mwK
 mwK
@@ -235977,7 +235997,7 @@ diV
 mwK
 eyG
 rZR
-nIu
+mtq
 nIu
 mwK
 gdG
@@ -236234,7 +236254,7 @@ vRp
 vRp
 nIu
 rZR
-nIu
+mtq
 mwK
 tII
 fFw
