@@ -37,7 +37,7 @@
 		/datum/skill/misc/lockpicking = 4,
 		/datum/skill/misc/sewing = 1,
 		/datum/skill/misc/riding = 3,
-		/datum/skill/misc/athletics = 4,
+		/datum/skill/misc/athletics = 5,
 		/datum/skill/misc/medicine = 2,
 		/datum/skill/craft/traps = 3,
 		/datum/skill/misc/reading = 1,

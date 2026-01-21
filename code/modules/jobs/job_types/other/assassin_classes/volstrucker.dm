@@ -22,15 +22,17 @@
 		/datum/skill/combat/swords = 1,
 		/datum/skill/combat/wrestling = 3,
 		/datum/skill/combat/unarmed = 3,
-		/datum/skill/misc/athletics = 3,
-		/datum/skill/combat/knives = 3,
+		/datum/skill/misc/athletics = 4,
+		/datum/skill/combat/knives = 4,
 		/datum/skill/misc/swimming = 2,
-		/datum/skill/misc/climbing = 4,
 		/datum/skill/misc/reading = 3,
 		/datum/skill/misc/medicine = 2,
 		/datum/skill/misc/sewing = 2,
 		/datum/skill/magic/arcane = 3,
-		/datum/skill/craft/alchemy = 2
+		/datum/skill/craft/alchemy = 2,
+		/datum/skill/misc/climbing = 5,
+		/datum/skill/misc/sneaking = 4,
+		/datum/skill/misc/lockpicking = 3,
 	)
 
 	traits = list(

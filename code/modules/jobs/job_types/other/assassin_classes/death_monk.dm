@@ -21,12 +21,12 @@
 
 	skills = list(
 		/datum/skill/combat/swords = 3,
-		/datum/skill/misc/athletics = 4,
-		/datum/skill/combat/unarmed = 4,
-		/datum/skill/combat/wrestling = 4,
-		/datum/skill/misc/sneaking = 3,
+		/datum/skill/misc/athletics = 5,
+		/datum/skill/combat/unarmed = 5,
+		/datum/skill/combat/wrestling = 5,
+		/datum/skill/misc/climbing = 5,
+		/datum/skill/misc/sneaking = 4,
 		/datum/skill/misc/stealing = 3,
-		/datum/skill/misc/climbing = 4,
 		/datum/skill/misc/swimming = 3,
 		/datum/skill/misc/medicine = 2,
 		/datum/skill/misc/sewing = 2,

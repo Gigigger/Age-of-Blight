@@ -6402,7 +6402,7 @@
 /obj/machinery/light/fueled/oven/south,
 /obj/structure/table/wood/counter/alt,
 /obj/item/kitchen/rollingpin,
-/turf/open/floor/cobble/snow,
+/turf/open/floor/blocks,
 /area/indoors/cave/underhamlet)
 "dbO" = (
 /obj/structure/fluff/railing/border{

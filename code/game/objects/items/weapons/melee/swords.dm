@@ -676,6 +676,7 @@
 	icon = 'icons/roguetown/weapons/32/patron.dmi'
 	icon_state = "eorarapier"
 	max_blade_int = 200
+	SET_BASE_PIXEL(16, 16)
 
 // Hoplite Kophesh
 /obj/item/weapon/sword/khopesh
