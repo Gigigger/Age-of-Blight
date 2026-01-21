@@ -1,6 +1,11 @@
-#define WHITELISTFILE "[global.config.directory]/whitelist.txt"
+#ifdef TESTSERVER
+	#define WHITELISTFILE	"[global.config.directory]/roguetown/wl_test.txt"
+#else
+	#define WHITELISTFILE	"[global.config.directory]/roguetown/wl_mat.txt"
+#endif
 
-GLOBAL_LIST(whitelist)
+GLOBAL_LIST_EMPTY(whitelist)
+GLOBAL_PROTECT(whitelist)
 
 /proc/load_whitelist()
 	GLOB.whitelist = list()
@@ -11,13 +16,14 @@ GLOBAL_LIST(whitelist)
 			continue
 		GLOB.whitelist += ckey(line)
 
-	if(!GLOB.whitelist.len)
-		GLOB.whitelist = null
-
 /proc/check_whitelist(ckey)
-	if(!GLOB.whitelist)
-		return FALSE
-	. = (ckey in GLOB.whitelist)
-	return CONFIG_GET(flag/usewhitelist)
-
+	if(!GLOB.whitelist || !GLOB.whitelist.len)
+		load_whitelist()
+#ifdef TESTSERVER
+	var/plevel = check_patreon_lvl(ckey)
+	var/tlevel = check_twitch_lvl(ckey)
+	if(plevel >= 3 || tlevel >= 1)
+		return TRUE
+#endif
+	return (ckey in GLOB.whitelist)
 #undef WHITELISTFILE
