@@ -32,6 +32,13 @@
 	. = ..()
 	enchant(/datum/enchantment/silver)
 
+//Tianxia Psycross
+
+/obj/item/clothing/neck/psycross/silver/jade
+	name = "Tianxian Amulet"
+	desc = "An amulet fashioend out of joapstone, even then such a relic is imbued with strength of faith from sect members"
+	icon_state = "amulet_jade"
+
 // PANTHEON SILVER PSYCROSSES START
 
 /obj/item/clothing/neck/psycross/silver/astrata

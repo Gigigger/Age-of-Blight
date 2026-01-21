@@ -1,20 +1,22 @@
+
 /datum/job/advclass/guilder/death_monk
-	title = "Death Monk"
-	tutorial = "You are a master martial artist that hails from the Sect of Heavenly Deathfist. \
-		Master of unarmed combat in the name of Psydon and the Scholar-Emperor within the Jade Empire far east of Grenzelhoft.\
-		Despite your faith in Psydon, you have taken on contracts and eventually service within the Thieves Guild. \n\n \
-		Whether it's because you have fallen wayward or believe yo."
+	title = "Eastern Monk"
+	tutorial = "You are a Master of Martial Arts, a Death Monk that hails from the Sect of Heavenly Deathfist. \
+		Master of unarmed combat in the name of Psydon and the Scholar-Emperor of Tianxia, the Ink-Jade Empire far east of Grenzelhoft.\
+		Despite your faith in Psydon, you have taken on contracts and eventually service within the Thieves Guild. \
+		Whether it's because you have fallen wayward or believe you can enact change within."
+	allowed_sexes = list(MALE, FEMALE)
 	allowed_races = RACES_PLAYER_JADE
-	outfit = /datum/outfit/guilder/death_monk
 	category_tags = list(CTAG_CRIME)
+	outfit = /datum/outfit/guilder/death_monk
 	cmode_music = 'sound/music/cmode/guild/Combat_Monk.ogg'
-	total_positions = 5
+	total_positions = 10
 
 	jobstats = list(
 		STATKEY_STR = 2,
 		STATKEY_END = 2,
 		STATKEY_CON = 2,
-		STATKEY_SPD = 2,
+		STATKEY_SPD = 2
 	)
 
 	skills = list(
@@ -22,6 +24,8 @@
 		/datum/skill/misc/athletics = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/unarmed = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/wrestling = SKILL_LEVEL_EXPERT,
+		/datum/skill/misc/sneaking = SKILL_LEVEL_JOURNEYMAN,
+		/datum/skill/misc/stealing = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/climbing = SKILL_LEVEL_EXPERT,
 		/datum/skill/misc/swimming = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/misc/medicine = SKILL_LEVEL_APPRENTICE,
@@ -36,31 +40,51 @@
 		TRAIT_PSYDONITE,
 	)
 
-/datum/job/advclass/guilder/death_monk/after_spawn(mob/living/carbon/human/spawned, client/player_client)
-	. = ..()
-	spawned.title = "Eastern Monk"
-
 /datum/outfit/guilder/death_monk
 	name = "Death Monk"
-	head = /obj/item/clothing/head/leather/duelhat
-	cloak = /obj/item/clothing/cloak/half/duelcape
-	armor = /obj/item/clothing/armor/leather/jacket/leathercoat/duelcoat
-	shirt = /obj/item/clothing/shirt/undershirt
-	gloves = /obj/item/clothing/gloves/leather/duelgloves
-	pants = /obj/item/clothing/pants/trou/leather/advanced/colored/duelpants
-	shoes = /obj/item/clothing/shoes/nobleboot/duelboots
-	belt = /obj/item/storage/belt/leather/mercenary
-	backl = /obj/item/storage/backpack/satchel
-	backpack_contents = list(/obj/item/storage/belt/pouch/coins/mid = 1)
-	scabbards = list(/obj/item/weapon/scabbard/sword)
+	shoes = /obj/item/clothing/shoes/shortboots
+	armor = /obj/item/clothing/armor/monk_robe
+	shirt = /obj/item/clothing/shirt/undershirt/easttats/death_monk
+	backr = /obj/item/storage/backpack/satchel/black
+	belt = /obj/item/storage/belt/leather/rope/dark
+	pants = /obj/item/clothing/pants/tights/colored/black
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/colored/brown
+	neck = /obj/item/clothing/neck/psycross/silver
+	wrists = /obj/item/clothing/wrists/bracers/psythorns
+	backpack_contents = list(
+		/obj/item/key/crime = 1,
+		/obj/item/storage/belt/pouch/coins/mid = 1,
+	)
 
-/datum/outfit/mercenary/duelist/pre_equip(mob/living/carbon/human/equipped_human, visuals_only)
+/datum/outfit/guilder/death_monk/post_equip(mob/living/carbon/human/equipped_human, visuals_only)
 	. = ..()
-	var/rando = rand(1,6)
-	switch(rando)
-		if(1 to 2)
-			beltl = /obj/item/weapon/sword/rapier
-		if(3 to 4)
-			beltl = /obj/item/weapon/sword/rapier/silver //Correct, They have a chance to receive a silver rapier, due to them being from Valoria.
-		if(5 to 6)
-			beltl = /obj/item/weapon/sword/rapier/dec
+	if(visuals_only)
+		return
+//Death monk gets Psydonic equipment due to the lore, however without the assistance of the Absolver it doesn't do anything much
+	var/static/list/weapons = list(
+		"Discipline - Unarmed" = null,
+		"Katar" = /obj/item/weapon/katar/psydon,
+		"Knuckledusters" = /obj/item/weapon/knuckles/psydon,
+		"Quarterstaff" = /obj/item/weapon/polearm/woodstaff/quarterstaff,
+	)
+	var/weapon_choice = equipped_human.select_equippable(equipped_human, weapons, message = "What did you master?")
+	var/obj/item/clothing/gloves/gloves_to_wear = /obj/item/clothing/gloves/bandages/weighted
+	switch(weapon_choice)
+		if("Discipline - Unarmed")
+			equipped_human.clamped_adjust_skillrank(/datum/skill/combat/unarmed, 5, 5)
+			equipped_human.clamped_adjust_skillrank(/datum/skill/misc/athletics, 5, 5)
+			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 1)
+			gloves_to_wear = /obj/item/clothing/gloves/bandages/pugilist
+			ADD_TRAIT(equipped_human, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
+			ADD_TRAIT(equipped_human, TRAIT_IGNOREDAMAGESLOWDOWN, JOB_TRAIT)
+		if("Katar")
+			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 1)
+			ADD_TRAIT(equipped_human, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
+		if("Knuckledusters")
+			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_STR, 1)
+			ADD_TRAIT(equipped_human, TRAIT_CRITICAL_RESISTANCE, JOB_TRAIT)
+		if("Quarterstaff")
+			equipped_human.clamped_adjust_skillrank(/datum/skill/combat/polearms, 4, 4)
+			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_PER, 1)
+			equipped_human.adjust_stat_modifier(STATMOD_JOB, STATKEY_INT, 1)
+	equipped_human.equip_to_slot_or_del(new gloves_to_wear, ITEM_SLOT_GLOVES, TRUE)

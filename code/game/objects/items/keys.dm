@@ -185,7 +185,7 @@
 
 /obj/item/key/crime
 	name = "matron's assistant key"
-	icon-state = "rustkey"
+	icon_state = "rustkey"
 	lockids = list(ACCESS_CRIME)
 
 /obj/item/key/elder
