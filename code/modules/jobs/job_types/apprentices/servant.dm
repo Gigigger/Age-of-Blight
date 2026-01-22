@@ -33,17 +33,17 @@
 	skills = list(
 	/datum/skill/combat/knives = 2,
 	/datum/skill/combat/wrestling = 2,
-	/datum/skill/craft/cooking = 3
-	/datum/skill/craft/crafting = pick(2,3)
-	/datum/skill/labor/butchering, = 2
-	/datum/skill/labor/farming = 1
-	/datum/skill/misc/athletics = 3
-	/datum/skill/misc/medicine = 2
-	/datum/skill/misc/music = pick(1,2)
-	/datum/skill/misc/reading = 1
-	/datum/skill/misc/sewing = 2
-	/datum/skill/misc/sneaking = 2
-	/datum/skill/misc/stealing = 2
+	/datum/skill/craft/cooking = 3,
+	/datum/skill/craft/crafting = 3,
+	/datum/skill/labor/butchering = 2,
+	/datum/skill/labor/farming = 1,
+	/datum/skill/misc/athletics = 3,
+	/datum/skill/misc/medicine = 2,
+	/datum/skill/misc/music = 2,
+	/datum/skill/misc/reading = 1,
+	/datum/skill/misc/sewing = 2,
+	/datum/skill/misc/sneaking = 2,
+	/datum/skill/misc/stealing = 2,
 	)
 
 	mind_traits = list(
@@ -51,11 +51,11 @@
 	)
 	traits = list(
 		TRAIT_ROYALSERVANT,
-		TRAIT_DODGEEXPERT.
+		TRAIT_DODGEEXPERT,
 		TRAIT_BEAUTIFUL,
 		TRAIT_GOODLOVER,
 		TRAIT_EMPATH,
-		TRAIT_INDENTURED,
+		TRAIT_INDENTURED
 	)
 
 
@@ -104,7 +104,7 @@
 		"Bow" = list(/obj/item/gun/ballistic/revolver/grenadelauncher/bow/long, /obj/item/ammo_holder/quiver/arrows),
 		"Crossbow" = list(/obj/item/gun/ballistic/revolver/grenadelauncher/crossbow, /obj/item/ammo_holder/quiver/bolts),
 		"Knife" = /obj/item/weapon/knife/dagger/steel,
-		"Hoplite Combo (Spear and Shield)" = List(/obj/item/weapon/shield/tower/buckleriron, /obj/item/weapon/polearm/spear/hoplite),
+		"Hoplite Combo (Spear and Shield)" = list(/obj/item/weapon/shield/tower/buckleriron, /obj/item/weapon/polearm/spear/hoplite),
 		"Pugilist (Fists)" = /obj/item/clothing/gloves/bandages/weighted,
 		"Whips" = /obj/item/weapon/whip/nagaika
 	)

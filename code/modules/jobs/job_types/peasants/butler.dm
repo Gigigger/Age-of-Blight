@@ -57,13 +57,13 @@
 	traits = list(
 		TRAIT_ROYALSERVANT,
 		TRAIT_CRITICAL_RESISTANCE,
-		TRAIT_DODGEEXPERT.
+		TRAIT_DODGEEXPERT,
 		TRAIT_BEAUTIFUL,
 		TRAIT_GOODLOVER,
 		TRAIT_NOPAINSTUN,
 		TRAIT_HARDDISMEMBER,
 		TRAIT_EMPATH,
-		TRAIT_INDENTURED,
+		TRAIT_INDENTURED
 	)
 
 /datum/job/butler/after_spawn(mob/living/carbon/human/spawned, client/player_client)

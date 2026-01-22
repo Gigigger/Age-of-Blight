@@ -36,7 +36,8 @@
 	)
 
 	traits = list(
-		TRAIT_DODGEEXPERT
+		TRAIT_DODGEEXPERT,
+		TRAIT_WHISPERCASTER
 	)
 
 	spells = list(
