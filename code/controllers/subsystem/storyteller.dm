@@ -152,7 +152,6 @@ SUBSYSTEM_DEF(gamemode)
 		/datum/round_event_control/collapsing_earth = 1,
 		/datum/round_event_control/haunts = 3,
 		/datum/round_event_control/disaster_stink = 2,
-		/datum/round_event_control/disaster_arousal = 2,
 		/datum/round_event_control/disaster_thirst = 2,
 		/datum/round_event_control/disaster_meteorstorm = 1,
 	)
@@ -812,8 +811,6 @@ SUBSYSTEM_DEF(gamemode)
 			return "Cold whispers coil through your prayer. The streets will be haunted within ten minutes."
 		if(/datum/round_event_control/disaster_stink)
 			return "A rancid miasma coils in your lungs. Zizo will foul every soul with stench within ten minutes."
-		if(/datum/round_event_control/disaster_arousal)
-			return "A feverish warmth creeps through your veins. A wave of lust will sweep the town within ten minutes."
 		if(/datum/round_event_control/disaster_thirst)
 			return "Your mouth goes dry in prayer. A curse of thirst will grip the town within ten minutes."
 		if(/datum/round_event_control/disaster_meteorstorm)

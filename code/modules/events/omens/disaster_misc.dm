@@ -22,31 +22,6 @@
 		if(species)
 			species.handle_hygiene(H)
 
-/datum/round_event_control/disaster_arousal
-	name = "Fevered Desire"
-	track = EVENT_TRACK_OMENS
-	typepath = /datum/round_event/disaster_arousal
-	weight = 0
-	max_occurrences = 0
-	min_players = 0
-
-	tags = list(
-		TAG_CURSE,
-		TAG_WIDESPREAD,
-		TAG_DISASTER,
-	)
-
-/datum/round_event/disaster_arousal/start()
-	. = ..()
-	for(var/mob/living/carbon/human/H as anything in GLOB.player_list)
-		if(!H.client || H.stat == DEAD || H.client.is_afk())
-			continue
-		var/list/arousal_data = list()
-		SEND_SIGNAL(H, COMSIG_SEX_GET_AROUSAL, arousal_data)
-		var/current_arousal = arousal_data["arousal"] || 0
-		if(current_arousal < 90)
-			SEND_SIGNAL(H, COMSIG_SEX_SET_AROUSAL, 90)
-
 /datum/round_event_control/disaster_thirst
 	name = "Parching Curse"
 	track = EVENT_TRACK_OMENS
