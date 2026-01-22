@@ -1,14 +1,11 @@
-/* Assassins are dunked in favor of a proper crime guild role
-/datum/job/advclass/combat/assassin
-	title = "Assassin"
-	tutorial = "From a young age you have been drawn to blood, to hurting others. Eventually you found others like you, and a god who would bless your actions. Your cursed dagger has never led you astray, and with every stab you feel a little less empty."
+/datum/job/advclass/guilder/hitman
+	title = "Hitman"
+	tutorial = "From a young age you have been drawn to blood, to hurting others. \
+	Eventually the Thieves' guild found you, and decided your potential was worth nuturing \
+	Your training has never led you astray, and with every stab you felt more and more enjoyable."
 	allowed_sexes = list(MALE, FEMALE)
-	bypass_class_cat_limits = TRUE
-	category_tags = list(CTAG_PILGRIM)
-	total_positions = 2
-	inherit_parent_title = TRUE //this prevents advjob from being set back to "Assassin" in equipme
-	antags_can_pick = FALSE //Assassins are antagonists by default, so they can't be chosen if you're already an antagonist.
-	antag_role = /datum/antagonist/assassin
+	category_tags = list(CTAG_CRIME)
+	inherit_parent_title = TRUE //this prevents advjob from being set back to "Assassin" in equipme (I dunno what this does and im just gonna keep it as is)
 
 	pack_title = "Assassin Disguises"
 	pack_message = "Choose your cover identity"
@@ -24,7 +21,6 @@
 		/datum/job_pack/assassin/assassin_thief,
 		/datum/job_pack/assassin/assassin_ranger,
 		/datum/job_pack/assassin/assassin_servant,
-		/datum/job_pack/assassin/assassin_faceless,
 	)
 
 	skills = list(
@@ -41,7 +37,7 @@
 		/datum/skill/misc/lockpicking = 4,
 		/datum/skill/misc/sewing = 1,
 		/datum/skill/misc/riding = 3,
-		/datum/skill/misc/athletics = 4,
+		/datum/skill/misc/athletics = 5,
 		/datum/skill/misc/medicine = 2,
 		/datum/skill/craft/traps = 3,
 		/datum/skill/misc/reading = 1,
@@ -54,9 +50,7 @@
 
 	traits = list(
 		TRAIT_DODGEEXPERT,
-		TRAIT_ASSASSIN,
 		TRAIT_DEADNOSE,
-		TRAIT_VILLAIN,
 		TRAIT_STEELHEARTED,
 		TRAIT_STRONG_GRABBER,
 	)
@@ -77,7 +71,7 @@
 	name = "Bard"
 
 	pack_skills = list(
-		/datum/skill/misc/music = 1,
+		/datum/skill/misc/music = 3,
 	)
 
 	pack_contents = list(
@@ -95,6 +89,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/flint = 1,
+		/obj/item/key/crime = 1,
 	)
 
 /datum/job_pack/assassin/assassin_bard/pick_pack(mob/living/carbon/human/picker)
@@ -139,7 +134,7 @@
 	name = "Fisher"
 
 	pack_skills = list(
-		/datum/skill/labor/fishing = 1,
+		/datum/skill/labor/fishing = 3,
 	)
 
 	pack_contents = list(
@@ -154,6 +149,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/weapon/knife/hunting = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/natural/worms = 1,
 		/obj/item/weapon/shovel/small = 1,
 	)
@@ -185,8 +181,8 @@
 	name = "Hunter"
 
 	pack_skills = list(
-		/datum/skill/combat/bows = 2,
-		/datum/skill/combat/crossbows = -2, // Trade-off
+		/datum/skill/combat/bows = 3,
+		/datum/skill/combat/crossbows = -3, // Trade-off
 	)
 
 	pack_contents = list(
@@ -206,6 +202,7 @@
 	pack_backpack_contents = list(
 		/obj/item/flint = 1,
 		/obj/item/bait = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/weapon/knife/hunting = 1,
 	)
 
@@ -213,9 +210,9 @@
 	name = "Miner"
 
 	pack_skills = list(
-		/datum/skill/labor/mining = 1,
-		/datum/skill/combat/axesmaces = 2,
-		/datum/skill/combat/swords = -2, // Trade-off
+		/datum/skill/labor/mining = 2,
+		/datum/skill/combat/axesmaces = 3,
+		/datum/skill/combat/swords = -3, // Trade-off
 	)
 
 	pack_contents = list(
@@ -233,11 +230,18 @@
 
 	pack_backpack_contents = list(
 		/obj/item/flint = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/weapon/knife/hunting = 1,
 	)
 
 /datum/job_pack/assassin/assassin_noble
 	name = "Noble"
+
+	pack_skills = list(
+		/datum/skill/combat/swords = 1,
+		/datum/skill/combat/bows = 1,
+		/datum/skill/combat/crossbows = -1
+	)
 
 	pack_contents = list(
 		/obj/item/clothing/shoes/boots = ITEM_SLOT_SHOES,
@@ -249,6 +253,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/reagent_containers/glass/bottle/wine = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/reagent_containers/glass/cup/silver = 1,
 	)
 
@@ -269,8 +274,6 @@
 	picker.name = "[honorary] [prev_name]"
 
 	if(picker.gender == MALE)
-		picker.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
-
 		var/obj/item/clothing/pants/tights/colored/black/pants = new()
 		picker.equip_to_slot_or_del(pants, ITEM_SLOT_PANTS, TRUE)
 		var/obj/item/clothing/shirt/tunic/colored/random/shirt = new()
@@ -286,9 +289,6 @@
 		var/obj/item/ammo_holder/quiver/arrows/beltl = new()
 		picker.equip_to_slot_or_del(beltl, ITEM_SLOT_BELT_L, TRUE)
 	else
-		picker.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
-		picker.adjust_skillrank(/datum/skill/combat/crossbows, -1, TRUE)
-
 		var/obj/item/clothing/shirt/dress/silkdress/colored/random/shirt = new()
 		picker.equip_to_slot_or_del(shirt, ITEM_SLOT_SHIRT, TRUE)
 		var/obj/item/clothing/head/fancyhat/head = new()
@@ -306,7 +306,7 @@
 	name = "Peasant"
 
 	pack_skills = list(
-		/datum/skill/labor/farming = 1,
+		/datum/skill/labor/farming = 3,
 	)
 
 	pack_contents = list(
@@ -326,6 +326,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/neuFarm/seed/wheat = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/neuFarm/seed/apple = 1,
 		/obj/item/fertilizer/ash = 1,
 		/obj/item/weapon/knife/villager = 1,
@@ -369,6 +370,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/flint = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/weapon/knife/villager = 1,
 	)
 
@@ -414,6 +416,7 @@
 
 	pack_backpack_contents = list(
 		/obj/item/bait = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/weapon/knife/hunting = 1,
 	)
 
@@ -465,8 +468,10 @@
 
 	pack_backpack_contents = list(
 		/obj/item/recipe_book/cooking = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/reagent_containers/glass/bottle/poison = 1,
-		/obj/item/weapon/knife/dagger/steel/profane = 1,
+		/obj/item/weapon/knife/dagger/steel/special = 1,
+		/obj/item/key/crime = 1,
 		/obj/item/lockpick = 1,
 	)
 
@@ -503,63 +508,3 @@
 		picker.equip_to_slot_or_del(cloak, ITEM_SLOT_CLOAK, TRUE)
 		var/obj/item/clothing/head/maidband/head = new()
 		picker.equip_to_slot_or_del(head, ITEM_SLOT_HEAD, TRUE)
-
-/datum/job_pack/assassin/assassin_faceless
-	name = "Faceless One"
-
-	pack_traits = list(
-		TRAIT_FACELESS
-	)
-
-	pack_contents = list(
-		/obj/item/clothing/head/faceless = ITEM_SLOT_HEAD,
-		/obj/item/clothing/shirt/robe/faceless = ITEM_SLOT_ARMOR,
-		/obj/item/clothing/gloves/leather/black = ITEM_SLOT_GLOVES,
-		/obj/item/clothing/pants/trou/leather = ITEM_SLOT_PANTS,
-		/obj/item/clothing/shoes/boots = ITEM_SLOT_SHOES,
-		/obj/item/storage/backpack/satchel = ITEM_SLOT_BACK_L,
-		/obj/item/storage/belt/pouch/coins/poor = ITEM_SLOT_BELT_L,
-		/obj/item/weapon/knife/dagger/steel = ITEM_SLOT_BELT_R,
-		/obj/item/clothing/cloak/faceless = ITEM_SLOT_CLOAK,
-		/obj/item/clothing/shirt/undershirt/colored/black = ITEM_SLOT_SHIRT,
-		/obj/item/clothing/face/lordmask/faceless = ITEM_SLOT_MASK,
-	)
-
-	pack_backpack_contents = list(
-		/obj/item/reagent_containers/glass/bottle/poison = 1,
-		/obj/item/weapon/knife/dagger/steel/profane = 1,
-		/obj/item/lockpick = 1,
-		/obj/item/storage/fancy/cigarettes/zig = 1,
-		/obj/item/flint = 1,
-	)
-
-/datum/job_pack/assassin/assassin_faceless/pick_pack(mob/living/carbon/human/picker)
-	. = ..()
-	picker.real_name = get_faceless_name(picker)
-	picker.name = picker.real_name
-
-	var/list/belt_options = list("Leather Belt", "Toss Blade Belt")
-	var/belt_pick = browser_input_list(picker, "Select belt.", "BELT OPTION", belt_options)
-	if(!belt_pick)
-		belt_pick = pick(belt_options)
-
-	switch(belt_pick)
-		if("Leather Belt")
-			var/obj/item/storage/belt/leather/belt = new()
-			picker.equip_to_slot_or_del(belt, ITEM_SLOT_BELT, TRUE)
-		if("Toss Blade Belt")
-			var/obj/item/storage/belt/leather/knifebelt/black/steel/belt = new()
-			picker.equip_to_slot_or_del(belt, ITEM_SLOT_BELT, TRUE)
-
-/datum/job_pack/assassin/assassin_faceless/proc/get_faceless_name(mob/living/carbon/human/H)
-	if(is_species(H, /datum/species/rakshari) && prob(10))
-		return "Furless One"
-	else if(is_species(H, /datum/species/harpy) && prob(10))
-		return "Featherless One"
-	else if(is_species(H, /datum/species/kobold) && prob(10))
-		return "Scaleless One"
-	else if(prob(1))
-		return pick("Friendless One", "Maidenless One", "Fatherless One", "Kinless One")
-	else
-		return "Faceless One"
-*/

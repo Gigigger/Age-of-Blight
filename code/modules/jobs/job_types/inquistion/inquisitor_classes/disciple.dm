@@ -41,7 +41,6 @@
 	var/datum/species/species = spawned.dna?.species
 	if(species)
 		species.native_language = "Old Psydonic"
-		species.accent_language = species.get_accent(species.native_language)
 
 	if(!spawned.mind)
 		return

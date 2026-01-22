@@ -103,6 +103,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	jobspawn_override = list("Mercenary")
 	delete_after_roundstart = FALSE
 
+/obj/effect/landmark/start/crimelate
+	name = "ThievesGuildlate"
+	icon_state = "arrow"
+	jobspawn_override = list("Thieves' Guild Member")
+	delete_after_roundstart = FALSE
+
 /obj/effect/landmark/start/villagerlate
 	name = "Townerlate"
 	icon_state = "arrow"
@@ -112,7 +118,7 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 /obj/effect/landmark/start/combatlate
 	name = "Combatlate"
 	icon_state = "arrow"
-	jobspawn_override = list( "Pilgrim", "Adventurer", "Mercenary")
+	jobspawn_override = list( "Pilgrim", "Adventurer")
 	delete_after_roundstart = FALSE
 
 /obj/effect/landmark/start/lord
@@ -291,7 +297,14 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 
 /obj/effect/landmark/start/mercenary
 	name = "Mercenary"
+	jobspawn_override = list("Mercenary")
 	icon_state = "arrow"
+
+/obj/effect/landmark/start/crime
+	name = "ThievesGuild"
+	icon_state = "arrow"
+	jobspawn_override = list("Thieves Guild Member")
+
 
 /obj/effect/landmark/start/minor_noble
 	name = "Noble"

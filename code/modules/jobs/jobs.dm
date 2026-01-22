@@ -114,6 +114,7 @@ GLOBAL_LIST_INIT(allmig_positions, list(
 	/datum/job/pilgrim::title,
 	/datum/job/adventurer::title,
 	/datum/job/mercenary::title,
+	/datum/job/guilder::title,
 	/datum/job/bandit::title,
 	/datum/job/wretch::title,
 	))

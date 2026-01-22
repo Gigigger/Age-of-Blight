@@ -48,7 +48,7 @@
 	TRAIT_OLDPARTY,
 	)
 
-	spell_points = 30
+	spell_points = 50
 	attunements_max = 10
 	attunements_min = 4
 	job_bitflag = BITFLAG_ROYALTY

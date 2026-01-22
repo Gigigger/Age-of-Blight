@@ -804,15 +804,10 @@
 	if(!isnull(trait_exam))
 		. += trait_exam
 
-	// The Assassin's profane dagger can sniff out their targets, even masked.
 	if(HAS_TRAIT(user, TRAIT_ASSASSIN) && ((has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(src, TRAIT_ZIZOID_HUNTED))))
 		//TODO: move this to an examinate signal call
 		if ((src != user) && iscarbon(user))
-			var/mob/living/carbon/assassin = user
-			for(var/obj/item/I in assassin.get_all_gear())
-				if(istype(I, /obj/item/weapon/knife/dagger/steel/profane))
-					. += "profane dagger whispers, [span_danger("\"That's [real_name]! Strike their heart!\"")]"
-					break
+			. += "[span_danger("\"Agent, that's your target [real_name]. Ensure the contract is fulfilled\"")]"
 
 	if(HAS_TRAIT(user, TRAIT_SEEPRICES) && sellprice)
 		. += "Is worth around [sellprice] mammons."

@@ -129,6 +129,30 @@
 
 // this robe spawns on a role that offers no leg protection nor further upgrades to the loadout, in exchange for better roundstart gear
 
+// Tianxia STUFF!! SO FAR FOR DEATH MONK ONLY BUT MORE TO COME!!
+
+/obj/item/clothing/armor/monk_robe
+	name = "eastern robes"
+	desc = "Robes of an Eastern Monk from the Eastern Psydonite lands of Tianxia, the smell of ink continues to stain it after so long"
+	icon_state = "monkcloth"
+	item_state = "monkcloth"
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_armor.dmi'
+	break_sound = 'sound/foley/cloth_rip.ogg'
+	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
+	max_integrity = 400
+	body_parts_covered = COVERAGE_FULL
+	armor = ARMOR_LEATHER
+	prevent_crits = list(BCLASS_CUT, BCLASS_STAB, BCLASS_BLUNT, BCLASS_CHOP, BCLASS_SMASH)
+	blocksound = SOFTHIT
+	blade_dulling = DULLING_BASHCHOP
+	sewrepair = TRUE
+	nodismemsleeves = TRUE
+	sellprice = 400
+	armor_class = AC_LIGHT
+	allowed_race = RACES_PLAYER_ALL
+	flags_inv = HIDEBOOB
+
+
 /obj/item/storage/belt/leather/exoticsilkbelt
 	name = "exotic silk belt"
 	desc = "A gold adorned belt with the softest of silks barely concealing one's bits."
@@ -308,7 +332,7 @@
 	resistance_flags = FIRE_PROOF
 	icon_state = "easttats"
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
-	armor = list("blunt" = 30, "slash" = 30, "stab" = 30, "piercing" = 20, "fire" = 0, "acid" = 0)
+	armor = list("blunt" = 35, "slash" = 35, "stab" = 35, "piercing" = 35, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
 	body_parts_covered = COVERAGE_FULL
 	icon = 'icons/roguetown/clothing/shirts.dmi'
@@ -320,7 +344,7 @@
 	surgery_cover = FALSE
 	max_integrity = 600 //Bad armor protection and very basic crit protection, but incredibly hard to break completely
 	flags_inv = null //free the breast
-	var/repair_amount = 6 //The amount of integrity the tattoos will repair themselves
+	var/repair_amount = 20 //The amount of integrity the tattoos will repair themselves
 	var/repair_time = 20 SECONDS //The amount of time between each repair
 	var/last_repair //last time the tattoos got repaired
 
@@ -350,3 +374,10 @@
 		src.last_repair = world.time
 		update_integrity(min(atom_integrity + src.repair_amount, src.max_integrity))
 	..()
+
+
+/obj/item/clothing/shirt/undershirt/easttats/death_monk
+	name = "Tianxian Inked Tattoos"
+	desc = "Tattos made from joapstone-infused ink, a secret technique within the sects of Tianxia that allows the very ink they rely on to become true power for them"
+	armor = ARMOR_LEATHER_GOOD
+	armor_class = AC_LIGHT
