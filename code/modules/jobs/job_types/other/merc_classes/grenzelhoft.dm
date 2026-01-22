@@ -24,21 +24,6 @@
 
 	cmode_music = 'sound/music/cmode/combat_grenzelhoft.ogg'
 
-/datum/outfit/mercenary/grenzelhoft/pre_equip(mob/living/carbon/human/H)
-	..()
-	if(H.mind)
-		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)	//Big sword user so - really helps them.
-		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-		H.adjust_skillrank(/datum/skill/combat/whipsflails, pick(1,1,2), TRUE)
-		H.adjust_skillrank(/datum/skill/combat/shields, pick(0,0,1), TRUE)
-		H.adjust_skillrank(/datum/skill/misc/reading, 1, TRUE)
-		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-
 /datum/outfit/mercenary/grenzelhoft
 	name = "Grenzelhoft (Mercenary)"
 	neck = /obj/item/clothing/neck/chaincoif
@@ -49,7 +34,6 @@
 	shirt = /obj/item/clothing/shirt/grenzelhoft
 	head = /obj/item/clothing/head/helmet/skullcap/grenzelhoft
 	armor = /obj/item/clothing/armor/cuirass/grenzelhoft
-
 
 /datum/job/advclass/mercenary/grenzelhoft/after_spawn(mob/living/carbon/human/H)
 	. = ..()
