@@ -40,6 +40,8 @@
 	var/togglename = null
 	abstract_type = /obj/item/clothing/armor
 
+	item_weight = 0 //it's fucking skin
+
 /obj/item/clothing/armor/worn_overlays(mutable_appearance/standing, isinhands = FALSE, icon_file, dummy_block = FALSE)
 	. = ..()
 	if(!isinhands)

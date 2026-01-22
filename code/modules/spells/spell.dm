@@ -697,6 +697,9 @@
 	var/used_invocation_message = invocation_list[INVOCATION_MESSAGE]
 	var/used_invocation_type = invocation_list[INVOCATION_TYPE]
 
+	if(HAS_TRAIT(invoker, TRAIT_WHISPERCASTER))
+		used_invocation_type = INVOCATION_WHISPER
+
 	switch(used_invocation_type)
 		if(INVOCATION_SHOUT)
 			invoker.say(used_invocation_message, forced = "spell ([src])")
