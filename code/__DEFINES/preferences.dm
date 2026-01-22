@@ -84,6 +84,7 @@
 #define EXP_TYPE_MEDICAL	"Medical Roles"
 #define EXP_TYPE_LEADERSHIP	"Leadership Roles"
 #define EXP_TYPE_MERCENARY	"Mercenary Roles"
+#define EXP_TYPE_CRIME		"Criminal Roles" //for the various town-related roles that are illegal but tolerated like Fencer/Matron and soon to be Assassin
 
 #define EXP_TYPE_CLERIC	"Cleric Roles"
 #define EXP_TYPE_RANGER	"Ranger Roles"

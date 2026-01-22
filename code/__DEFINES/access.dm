@@ -9,6 +9,7 @@
 #define ACCESS_APOTHECARY "apothecary"
 #define ACCESS_FELDSHER "doctor"
 #define ACCESS_MATRON "orphanage"
+#define ACCESS_CRIME "crime_guild" //Subset of ACCESS_MATRON
 #define ACCESS_ELDER "elder"
 #define ACCESS_VETERAN "veteran"
 #define ACCESS_MERC "mercenary"

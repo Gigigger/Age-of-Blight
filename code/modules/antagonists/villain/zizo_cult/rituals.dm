@@ -215,18 +215,19 @@ GLOBAL_LIST_INIT(ritualslist, build_zizo_rituals())
 			continue
 		if(HL.real_name == paper_name)
 			target = HL
-		else if(HAS_TRAIT(HL, TRAIT_ASSASSIN))
+		else if(HAS_TRAIT(HL, TRAIT_ASSASSIN) && !HAS_TRAIT(target, TRAIT_THIEVESGUILD))
 			assassin_found = TRUE
-			var/obj/item/weapon/knife/dagger/steel/profane/dagger = locate() in HL.get_all_gear()
-			if(dagger)
-				to_chat(HL, "profane dagger whispers, <span class='danger'>\"The terrible Zizo has called for our aid. Hunt and strike down our common foe, [target.real_name]!\"</span>")
+			to_chat(HL, "you hear a contract whisper to you, <span class='danger'>\"Someone paid a lot of money, [target.real_name]!\"</span>")
+	if(HAS_TRAIT(target, TRAIT_THIEVESGUILD))
+		to_chat(user, span_warning("The Thieves Guild does not accept contracts to kill their own"))
+		return
 	if(!target || !assassin_found)
-		to_chat(user, span_warning("There has been no answer to your call to the Dark Sun. It seems his servants are far from here..."))
+		to_chat(user, span_warning("There is no one to accept our contract to kill the target"))
 		return
 	ADD_TRAIT(target, TRAIT_ZIZOID_HUNTED, TRAIT_GENERIC) // Gives the victim a trait to track that they are wanted dead.
 	log_hunted("[key_name(target)] playing as [target] had the hunted flaw by Zizoid curse.")
 	to_chat(target, span_danger("My hair stands on end. Has someone just said my name? I should watch my back."))
-	to_chat(user, span_warning("Your target has been marked, your profane call answered by the Dark Sun. [target.real_name] will surely perish!"))
+	to_chat(user, span_warning("Your target has been marked, your profane call answered by Assassins. [target.real_name] will surely perish!"))
 	qdel(D)
 	qdel(P)
 	target.playsound_local(target, 'sound/magic/marked.ogg', 100)

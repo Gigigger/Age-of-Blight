@@ -225,7 +225,7 @@
 	contents += "<a href='byond://?src=[REF(src)];change=1'>MAMMON LOADED:</a> [budget]<BR>"
 
 	var/mob/living/carbon/human/H = user
-	if(H.job == "Apothecary")
+	if(H.job == "Apothecary" || HAS_TRAIT(H, TRAIT_THIEVESGUILD))
 		if(canread)
 			contents += "<a href='byond://?src=[REF(src)];secrets=1'>Secrets</a>"
 		else

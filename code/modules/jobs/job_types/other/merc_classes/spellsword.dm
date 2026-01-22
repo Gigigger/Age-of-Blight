@@ -9,7 +9,7 @@
 	blacklisted_species = list(SPEC_ID_HALFLING)
 	exp_types_granted = list(EXP_TYPE_MERCENARY, EXP_TYPE_COMBAT, EXP_TYPE_MAGICK)
 	magic_user = TRUE
-	spell_points = 5
+	spell_points = 10
 
 	jobstats = list(
 		STATKEY_STR = 2,
@@ -28,7 +28,7 @@
 		/datum/skill/misc/reading = 3,
 		/datum/skill/misc/medicine = 1,
 		/datum/skill/misc/sewing = 1,
-		/datum/skill/magic/arcane = 1,
+		/datum/skill/magic/arcane = 3,
 		/datum/skill/craft/alchemy = 1
 	)
 

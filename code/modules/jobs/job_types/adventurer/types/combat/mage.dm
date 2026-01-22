@@ -8,7 +8,7 @@
 	blacklisted_species = list(SPEC_ID_HALFLING)
 	exp_types_granted = list(EXP_TYPE_ADVENTURER, EXP_TYPE_COMBAT, EXP_TYPE_MAGICK)
 	magic_user = TRUE
-	spell_points = 5
+	spell_points = 15
 
 	spells = list(
 		/datum/action/cooldown/spell/undirected/touch/prestidigitation
