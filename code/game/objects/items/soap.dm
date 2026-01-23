@@ -127,7 +127,7 @@
 			to_chat(user, span_warning("I can't bathe in this..."))
 			return FALSE
 
-	if(istype(target.head, /obj/item/clothing) || istype(target.wear_armor, /obj/item/clothing) || istype(target.wear_shirt, /obj/item/clothing) || istype(target.cloak, /obj/item/clothing))
+	if(istype(target.head, /obj/item/clothing) || istype(target.wear_armor, /obj/item/clothing) && !istype(target.wear_armor, /obj/item/clothing/armor/regenerating) || istype(target.wear_shirt, /obj/item/clothing) && !istype(target.wear_shirt, /obj/item/clothing/armor/regenerating) && !istype(target.wear_shirt, /obj/item/clothing/shirt/undershirt/easttats) || istype(target.cloak, /obj/item/clothing))
 		to_chat(user, span_warning("Can't get a proper bath with clothing on."))
 		return FALSE
 	if(istype(target.gloves, /obj/item/clothing))
