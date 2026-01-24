@@ -914,10 +914,18 @@ All effects don't start immediately, but rather get worse over time; the rate is
 /mob/living/carbon/proc/handle_sleep()
 	if(HAS_TRAIT(src, TRAIT_NOSLEEP))
 		return
+
 	var/cant_fall_asleep = FALSE
 	var/cause = "I just can't..."
 	var/list/equipped_items = get_equipped_items(FALSE)
-	if(HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && length(equipped_items) && !istype(target.wear_armor, /obj/item/clothing/armor/regenerating) && !istype(target.wear_shirt, /obj/item/clothing/armor/regenerating) && !istype(target.wear_shirt, /obj/item/clothing/shirt/undershirt/easttats) )
+
+	var/has_regen_armor = FALSE
+	for(var/obj/item/I in equipped_items)
+		if(istype(I, /obj/item/clothing/armor/regenerating))
+			has_regen_armor = TRUE
+			break
+
+	if(HAS_TRAIT(src, TRAIT_NUDE_SLEEPER) && length(equipped_items) && !has_regen_armor)
 		cant_fall_asleep = TRUE
 		cause = "I can't sleep in clothes, it's too uncomfortable.."
 	else
