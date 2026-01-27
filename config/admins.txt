@@ -1,1 +1,5 @@
 Vanaim = Host
+2vitamin2 = Head Admin
+Ivin_Slimes = Head Admin
+Chachq_Zamay = Head Admin
+anti4iter = Head Admin
