@@ -348,6 +348,8 @@
 	var/repair_time = 20 SECONDS //The amount of time between each repair
 	var/last_repair //last time the tattoos got repaired
 
+	item_weight = 0 //It's fucking skin
+
 /obj/item/clothing/shirt/undershirt/easttats/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)

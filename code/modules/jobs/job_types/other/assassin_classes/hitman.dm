@@ -45,7 +45,7 @@
 
 	jobstats = list(
 		STATKEY_PER = 2,
-		STATKEY_SPD = 2,
+		STATKEY_SPD = 4,
 	)
 
 	traits = list(
